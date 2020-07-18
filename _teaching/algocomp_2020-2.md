@@ -12,6 +12,6 @@ Grupo 3009, curso perteneciente al cuarto semestre de la licenciatura en Física
 
 Este curso se dio presencialemente durante 7 semanas hasta que la crisis del COVID19 nos obligó a continuar de manera remota.
 
-# Materiales del curso
+# Acerca del curso
 
-bla
+Todo las clases del curso están disponibles en mi canal de You Tube, en una playlist titulada "Algoritmos Computacionales 2020-2". Aquí en la página pueden encontrar todas las tareas del curso
