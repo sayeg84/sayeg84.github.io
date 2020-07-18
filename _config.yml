@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-skin : "neon" 
+minimal_mistakes_skin : "neon"
 locale                   : "es-MX"
-title                    : "Página personal Aldo Sayeg Pasos Trejo"
+title                    : "Página personal"
 title_separator          : "-"
 name                     : &name "Aldo Sayeg Pasos Trejo"
 description              : &description "personal description"
@@ -83,7 +83,7 @@ analytics:
 author:
   name             : "Aldo Sayeg Pasos Trejo"
   avatar           : "profile.png"
-  bio              : "Estudiante de Maestría en el Posgrado en Ciencias Matemáticas de la UNAM. Ocasionalmente doy cursos o ayudantías en la Facultad de Ciencias."
+  bio              : "Maestría en Ciencias Matemáticas, Facultad de Ciencias, UNAM."
   location         : "Ciudad de México, México."
   employer         :
   pubmed           : 
