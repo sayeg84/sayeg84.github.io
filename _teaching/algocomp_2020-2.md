@@ -14,7 +14,7 @@ Este curso se dio presencialemente durante 7 semanas hasta que la crisis del COV
 
 # Acerca del curso
 
-Todo las clases del curso están disponibles en mi canal de YouTube, la playlist titulada ["Algoritmos Computacionales 2020-2"](https://www.youtube.com/playlist?list=PLwEkAnYJ7sRYXvC0-T_ngRVpMX5uQ-2DA). Todas las clases con número menor a uno (clase 0.x) se impartieron presencialmente en el semestre y posteriormente las grabe durante el verano para completar el curso en línea.
+Todo las clases del curso están disponibles en mi canal de YouTube, la playlist titulada [Algoritmos Computacionales 2020-2](https://www.youtube.com/playlist?list=PLwEkAnYJ7sRYXvC0-T_ngRVpMX5uQ-2DA). Todas las clases con número menor a uno (clase 0.x) se impartieron presencialmente en el semestre y posteriormente las grabe durante el verano para completar el curso en línea.
 
 Todos los otros archivos y cosas necesarias para curso los pueden encontrar en esta página
 
@@ -26,7 +26,7 @@ El contenido del temario y la bibliografía son demasiado extensos para poneros 
 
 ## Guía de instalación de programas necesarios
 
-Hicimos una guía para que instalen todos los programas que se utilizarán en el curso. Pueden descargar la guía en PDF en [este link](http://sayeg84.github.io/files/algocomp_2020-2/instalación.pdf)
+Hicimos una guía para que instalen todos los programas que se utilizarán en el curso. Pueden descargar la guía en PDF en [este link](http://sayeg84.github.io/files/algocomp_2020-2/instalacion.pdf)
 
 ## Lista de instrucciones relevantes
 
@@ -85,7 +85,7 @@ En la mayoría de las tareas no basta solo con ver las clases correspondientes, 
 | [2](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea2.pdf) | 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 | 
 | [3](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea3.pdf) | 0.4, 0.5, 0.6, | 
 | [4](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea4.pdf) | 1, 2, 3 | 
-| [5](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea5.pdf) , [covid.csv](http://sayeg84.github.io/files/algocomp_2020-2/tareas/covid.csv) | 4, 5 | 
+| [5](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea5.pdf) , [covid.csv](http://sayeg84.github.io/files/algocomp_2020-2/tareas/covid19.csv) | 4, 5 | 
 | [6](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea6.pdf) | 6, 6.5, 7, 8 | 
 | [7](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea7.pdf) | 9, 10| 
 | [8](http://sayeg84.github.io/files/algocomp_2020-2/tareas/tarea8.pdf) | 11, 12 | 
