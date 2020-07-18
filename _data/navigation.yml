@@ -5,7 +5,7 @@ main:
     url: /cursos/ 
   
   - title: "Pláticas"
-    url: /talks/    
+    url: /platicas/    
 
   - title: "Blog"
     url: /blog/

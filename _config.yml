@@ -6,6 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin : "neon"
 locale                   : "es-MX"
 title                    : "Página personal"
@@ -83,7 +84,7 @@ analytics:
 author:
   name             : "Aldo Sayeg Pasos Trejo"
   avatar           : "profile.png"
-  bio              : "Maestría en Ciencias Matemáticas, Facultad de Ciencias, UNAM."
+  bio              : "Estudiante de posgrado en la Facultad de Ciencias. Me gusta la música."
   location         : "Ciudad de México, México."
   employer         :
   pubmed           : 
