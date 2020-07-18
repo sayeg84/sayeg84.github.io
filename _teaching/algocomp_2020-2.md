@@ -14,8 +14,9 @@ Este curso se dio presencialemente durante 7 semanas hasta que la crisis del COV
 
 # Acerca del curso
 
-Todo las clases del curso están disponibles en mi canal de YouTube, la playlist titulada ["Algoritmos Computacionales 2020-2"](https://www.youtube.com/playlist?list=PLwEkAnYJ7sRYXvC0-T_ngRVpMX5uQ-2DA). Todos los otros archivos y cosas necesarias para curso los pueden encontrar en esta página
+Todo las clases del curso están disponibles en mi canal de YouTube, la playlist titulada ["Algoritmos Computacionales 2020-2"](https://www.youtube.com/playlist?list=PLwEkAnYJ7sRYXvC0-T_ngRVpMX5uQ-2DA). Todas las clases con número menor a uno (clase 0.x) se impartieron presencialmente en el semestre y posteriormente las grabe durante el verano para completar el curso en línea.
 
+Todos los otros archivos y cosas necesarias para curso los pueden encontrar en esta página
 
 ## Temario
 
@@ -25,7 +26,7 @@ El contenido del temario y la bibliografía son demasiado extensos para poneros 
 
 ## Guía de instalación de programas necesarios
 
-Hicimos una guía para que instalen todos los programas que se utilizarán en el curso. Pueden acceder a la guía en [este link](http://sayeg84.github.io/files/algocomp_2020-2/instalación.pdf)
+Hicimos una guía para que instalen todos los programas que se utilizarán en el curso. Pueden descargar la guía en PDF en [este link](http://sayeg84.github.io/files/algocomp_2020-2/instalación.pdf)
 
 ## Lista de instrucciones relevantes
 
@@ -69,11 +70,14 @@ La siguiente tabla tiene los links para el material de cada clase
 | [Clase 21](http://sayeg84.github.io/files/algocomp_2020-2/clase21.zip) | | 
 
 
+
 ## Tareas
 
 Todas las tareas están disponibles aquí en la página. Para acceder a una tarea basta dar clic en su número. 
 
 Debido a problemas con diferencias de cómo se grabaron las primeras clases y las demás, el orden de las tareas parece no seguir exactamente el de las clases. La siguiente tabla relaciona las tareas con las clases.
+
+En la mayoría de las tareas no basta solo con ver las clases correspondientes, si no que el material de las clases anteriores también se necesita y se utiliza (en mayor o menor medida)
 
 |Tarea|Clases Correspondientes|
 |:----:|:----:|
