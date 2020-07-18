@@ -10,6 +10,10 @@ location: "Facultad de Ciencias, UNAM."
 
 Grupo 8449, con el ayudante David Leonardo Galicia Praskauer. Este curso se dará de manera completamente remota.
 
-# Contenido
+# Acerca del curso
 
-Aquí se almacenarán todos los resultados del curso cuando este termine.
+Todo las clases del curso están disponibles en mi canal de YouTube, la playlist titulada ["Algoritmos Computacionales 2020-2"](https://www.youtube.com/playlist?list=PLwEkAnYJ7sRYXvC0-T_ngRVpMX5uQ-2DA). Todos los otros archivos y cosas necesarias para curso los pueden encontrar en esta página
+
+## Guía de instalación de programas necesarios
+
+Hicimos una guía para que instalen todos los programas que se utilizarán en el curso. Pueden acceder a la guía en [este link](http://sayeg84.github.io/files/algocomp_2020-2/instalación.pdf)

@@ -4,7 +4,7 @@ collection: talks
 type: "Póster"
 permalink: /presentaciones/2019-emfeysc
 venue: "Facultad de Ciencias, Ciudad Universitaria, UNAM."
-date: 2014-03-01
+date: 2019-11-07
 location: "Ciudad de México, México."
 ---
 
