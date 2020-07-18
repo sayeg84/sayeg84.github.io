@@ -76,17 +76,17 @@ es: &DEFAULT_ES
   email_label                : "Email"
   recent_posts               : "Entradas recientes"
   undefined_wpm              : "Parametro words_per_minute (Palabras por minuto) no definido en _config.yml"
-  comment_form_info          :
-  comment_form_comment_label :
-  comment_form_md_info       :
-  comment_form_name_label    :
-  comment_form_email_label   :
-  comment_form_website_label :
-  comment_btn_submit         :
-  comment_btn_submitted      :
-  comment_success_msg        :
-  comment_error_msg          :
-  loading_label              :
+  comment_form_info          : "Tu correo no será publicado. Los campos requeridos están marcados"
+  comment_form_comment_label : "Comentario"
+  comment_form_md_info       : "Se soporta la sintaxis de Markdown"
+  comment_form_name_label    : "Nombre"
+  comment_form_email_label   : "Correo electrónico"
+  comment_form_website_label : "Sitio Web (opcional)"
+  comment_btn_submit         : "Enviar comentario"
+  comment_btn_submitted      : "¡Enviado!"
+  comment_success_msg        : "Tu comentario se mostrará al ser aprobado"
+  comment_error_msg          : "Hubo un error. Por favor verifica que los campos obligatorios están presentes"
+  loading_label              : "Cargando..."
 es-ES:
   <<: *DEFAULT_ES
 es-CO:
