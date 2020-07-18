@@ -1,7 +1,7 @@
 ---
 title: "Algoritmos Computacionales"
 collection: teaching
-type: "Curso"
+type: "Semestre 2020-2"
 permalink: /cursos/algocomp_2020-2
 venue: "Aula de Cómputo 1, Departamento de Física"
 date: 2020-07-29

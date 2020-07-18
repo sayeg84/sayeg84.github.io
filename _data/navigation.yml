@@ -4,8 +4,8 @@ main:
   - title: "Cursos"
     url: /cursos/ 
   
-  - title: "Pláticas"
-    url: /platicas/    
+  - title: "Presentaciones"
+    url: /presentaciones/    
 
   - title: "Blog"
     url: /blog/

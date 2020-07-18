@@ -6,7 +6,6 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-minimal_mistakes_skin : "dark"
 locale                   : "es-MX"
 title                    : "Página personal"
 title_separator          : "-"
@@ -82,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Aldo Sayeg Pasos Trejo"
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   bio              : "Estudiante de posgrado en la Facultad de Ciencias. Me gusta la música."
   location         : "Ciudad de México, México."
   employer         :

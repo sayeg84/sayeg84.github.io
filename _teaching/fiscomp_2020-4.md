@@ -1,9 +1,9 @@
 ---
-title: "Algoritmos Computacionales"
+title: "Física Computacional"
 collection: teaching
-type: "Curso"
-permalink: /cursos/algocomp_2020-2
-venue: "Aula de Cómputo 1, Departamento de Física"
+type: "Semestre 2020-4 (Intersemestral)"
+permalink: /cursos/fiscomp_2020-4
+venue: "-"
 date: 2020-02-01
 location: "Facultad de Ciencias, UNAM."
 ---
