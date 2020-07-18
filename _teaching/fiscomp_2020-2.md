@@ -4,7 +4,7 @@ collection: teaching
 type: "Curso"
 permalink: /cursos/algocomp_2020-2
 venue: "Aula de Cómputo 1, Departamento de Física"
-date: "Semestre 2020-2"
+date: 2020-02-01
 location: "Facultad de Ciencias, UNAM."
 ---
 
