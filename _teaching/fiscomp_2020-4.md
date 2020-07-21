@@ -15,12 +15,12 @@ Grupo 8449, con el ayudante David Leonardo Galicia Praskauer. Este curso se dar�
 
 Todo las clases del curso estarán disponibles en mi canal de YouTube, en una playlist que todavía no he creado. El blog de classroom también será creado hasta que inicie el curso.
 
-Ya que no dedicaremos demasiado tiempo a enseñarles a programar, es posible que les sea muy útil revisar el [curso de Algoritmos Computacionales](https://sayeg84.github.io/cursos/algocomp_2020-4), que si está diseñado para enseñar a programar desde 0.
+Ya que no dedicaremos demasiado tiempo a enseñarles a programar, es posible que les sea muy útil revisar el [curso de Algoritmos Computacionales](https://sayeg84.github.io/cursos/algocomp_2020-2), que si está diseñado para enseñar a programar desde 0.
 
 
 ## Temario
 
-El temario del curso es muy largo para ponerse aquí, pero pueden descargarlo en PDF en [este link](https://sayeg84.github.io/cursos/fiscomp_2020-2/temario.pdf)
+El temario del curso es muy largo para ponerse aquí, pero pueden descargarlo en PDF en [este link](https://sayeg84.github.io/files/fiscomp_2020-4/temario.pdf)
 
 ## Programas necesarios
 
