@@ -39,35 +39,35 @@ La siguiente tabla tiene los links para el material de cada clase
 | Clase | Notas |
 | :-: | :-: |
 | Clase 0.1 | No subí la presentación pues no es muy relevante | 
-| [Clase 0.2](http://sayeg84.github.io/files/algocomp_2020-2/clase0.2.zip) | | 
-| [Clase 0.3](http://sayeg84.github.io/files/algocomp_2020-2/clase0.3.zip) | | 
+| [Clase 0.2](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.2.zip) | | 
+| [Clase 0.3](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.3.zip) | | 
 | Clase 0.4 | En esta clase no escritos | 
-| [Clase 0.5](http://sayeg84.github.io/files/algocomp_2020-2/clase0.5.zip) | | 
-| [Clase 0.6](http://sayeg84.github.io/files/algocomp_2020-2/clase0.6.zip) | | 
-| [Clase 0.7](http://sayeg84.github.io/files/algocomp_2020-2/clase0.7.zip) | | 
-| [Clase 0.8](http://sayeg84.github.io/files/algocomp_2020-2/clase0.8.zip) | | 
-| [Clase 0.9](http://sayeg84.github.io/files/algocomp_2020-2/clase0.9.zip) | | 
-| [Clase 1](http://sayeg84.github.io/files/algocomp_2020-2/clase1.zip) | | 
-| [Clase 2](http://sayeg84.github.io/files/algocomp_2020-2/clase2.zip) | | 
-| [Clase 3](http://sayeg84.github.io/files/algocomp_2020-2/clase3.zip) | | 
-| [Clase 4](http://sayeg84.github.io/files/algocomp_2020-2/clase4.zip) | | 
-| [Clase 5](http://sayeg84.github.io/files/algocomp_2020-2/clase5.zip) | | 
-| [Clase 6](http://sayeg84.github.io/files/algocomp_2020-2/clase6.zip) | | 
-| [Clase 7](http://sayeg84.github.io/files/algocomp_2020-2/clase7.zip) | | 
-| [Clase 8](http://sayeg84.github.io/files/algocomp_2020-2/clase8.zip) | | 
-| [Clase 9](http://sayeg84.github.io/files/algocomp_2020-2/clase9.zip) | | 
-| [Clase 10](http://sayeg84.github.io/files/algocomp_2020-2/clase10.zip) | | 
-| [Clase 11](http://sayeg84.github.io/files/algocomp_2020-2/clase11.zip) | | 
-| [Clase 12](http://sayeg84.github.io/files/algocomp_2020-2/clase12.zip) | | 
-| [Clase 13](http://sayeg84.github.io/files/algocomp_2020-2/clase13.zip) | | 
-| [Clase 14](http://sayeg84.github.io/files/algocomp_2020-2/clase14.zip) | | 
-| [Clase 15](http://sayeg84.github.io/files/algocomp_2020-2/clase15.zip) | | 
-| [Clase 16](http://sayeg84.github.io/files/algocomp_2020-2/clase16.zip) | | 
-| [Clase 17](http://sayeg84.github.io/files/algocomp_2020-2/clase17.zip) | | 
-| [Clase 18](http://sayeg84.github.io/files/algocomp_2020-2/clase18.zip) | | 
-| [Clase 19](http://sayeg84.github.io/files/algocomp_2020-2/clase19.zip) | | 
-| [Clase 20](http://sayeg84.github.io/files/algocomp_2020-2/clase20.zip) | | 
-| [Clase 21](http://sayeg84.github.io/files/algocomp_2020-2/clase21.zip) | | 
+| [Clase 0.5](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.5.zip) | | 
+| [Clase 0.6](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.6.zip) | | 
+| [Clase 0.7](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.7.zip) | | 
+| [Clase 0.8](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.8.zip) | | 
+| [Clase 0.9](http://sayeg84.github.io/files/algocomp_2020-2/material/clase0.9.zip) | | 
+| [Clase 1](http://sayeg84.github.io/files/algocomp_2020-2/material/clase1.zip) | | 
+| [Clase 2](http://sayeg84.github.io/files/algocomp_2020-2/material/clase2.zip) | | 
+| [Clase 3](http://sayeg84.github.io/files/algocomp_2020-2/material/clase3.zip) | | 
+| [Clase 4](http://sayeg84.github.io/files/algocomp_2020-2/material/clase4.zip) | | 
+| [Clase 5](http://sayeg84.github.io/files/algocomp_2020-2/material/clase5.zip) | | 
+| [Clase 6](http://sayeg84.github.io/files/algocomp_2020-2/material/clase6.zip) | | 
+| [Clase 7](http://sayeg84.github.io/files/algocomp_2020-2/material/clase7.zip) | | 
+| [Clase 8](http://sayeg84.github.io/files/algocomp_2020-2/material/clase8.zip) | | 
+| [Clase 9](http://sayeg84.github.io/files/algocomp_2020-2/material/clase9.zip) | | 
+| [Clase 10](http://sayeg84.github.io/files/algocomp_2020-2/material/clase10.zip) | | 
+| [Clase 11](http://sayeg84.github.io/files/algocomp_2020-2/material/clase11.zip) | | 
+| [Clase 12](http://sayeg84.github.io/files/algocomp_2020-2/material/clase12.zip) | | 
+| [Clase 13](http://sayeg84.github.io/files/algocomp_2020-2/material/clase13.zip) | | 
+| [Clase 14](http://sayeg84.github.io/files/algocomp_2020-2/material/clase14.zip) | | 
+| [Clase 15](http://sayeg84.github.io/files/algocomp_2020-2/material/clase15.zip) | | 
+| [Clase 16](http://sayeg84.github.io/files/algocomp_2020-2/material/clase16.zip) | | 
+| [Clase 17](http://sayeg84.github.io/files/algocomp_2020-2/material/clase17.zip) | | 
+| [Clase 18](http://sayeg84.github.io/files/algocomp_2020-2/material/clase18.zip) | | 
+| [Clase 19](http://sayeg84.github.io/files/algocomp_2020-2/material/clase19.zip) | | 
+| [Clase 20](http://sayeg84.github.io/files/algocomp_2020-2/material/clase20.zip) | | 
+| [Clase 21](http://sayeg84.github.io/files/algocomp_2020-2/material/clase21.zip) | | 
 
 
 
