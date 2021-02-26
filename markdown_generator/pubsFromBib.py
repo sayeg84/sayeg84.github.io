@@ -27,7 +27,7 @@ import re
 #todo: incorporate different collection types rather than a catch all publications, requires other changes to template
 publist = {
     "proceeding": {
-        "file" : "proceedings.bib",
+        "file" : "macroscopic2021.bib",
         "venuekey": "booktitle",
         "venue-pretext": "In the proceedings of ",
         "collection" : {"name":"publications",
@@ -35,7 +35,7 @@ publist = {
         
     },
     "journal":{
-        "file": "pubs.bib",
+        "file": "macroscopic2021.bib",
         "venuekey" : "journal",
         "venue-pretext" : "",
         "collection" : {"name":"publications",
@@ -68,7 +68,7 @@ for pubsource in publist:
         b = bibdata.entries[bib_id].fields
         
         try:
-            pub_year = f'{b["year"]}'
+            pub_year = "{0}".format(b["year"])
 
             #todo: this hack for month and day needs some cleanup
             if "month" in b.keys(): 
