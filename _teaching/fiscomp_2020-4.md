@@ -8,7 +8,7 @@ date: 2020-02-01
 location: "Facultad de Ciencias, UNAM."
 ---
 
-Grupo 8449, con el ayudante David Leonardo Galicia Praskauer. Este curso se dará de manera completamente remota.
+Grupo 8449, con los ayudantes David Leonardo Galicia Praskauer y Crhistian Alejandro Benítez Abarca. Este curso se dará de manera completamente remota.
 
 # Acerca del curso
 
