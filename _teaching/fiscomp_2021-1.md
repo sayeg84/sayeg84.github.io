@@ -1,14 +1,14 @@
 ---
 title: "Física Computacional"
 collection: teaching
-type: "Semestre 2020-1"
-permalink: /cursos/fiscomp_2020-4
+type: "Semestre 2021-1"
+permalink: /cursos/fiscomp_2021-1
 venue: "-"
-date: 2020-02-01
+date: 2020-09-21
 location: "Facultad de Ciencias, UNAM."
 ---
 
-Grupo 8449, con el ayudante David Leonardo Galicia Praskauer y Crhistian Alejandro Benítez Abarca. Este curso se dará de manera completamente remota.
+Grupo 8423, con el ayudante David Leonardo Galicia Praskauer y Crhistian Alejandro Benítez Abarca. Este curso se dará de manera completamente remota.
 
 # Acerca del curso
 

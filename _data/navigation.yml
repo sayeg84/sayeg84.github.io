@@ -7,6 +7,9 @@ main:
   - title: "Presentaciones"
     url: /presentaciones/    
 
+  - title: "Publicaciones"
+    url: /publications/
+
   - title: "Blog"
     url: /blog/
     
