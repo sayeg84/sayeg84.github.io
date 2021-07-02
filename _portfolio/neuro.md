@@ -75,8 +75,8 @@ Durante mi servicio social, trabajé como asistente del [Prof. Alessio Franci](h
 </div>
 <script>
 
-
-var totalReadout = document.getElementById("totalReadout");
+window.addEventListener("load", () => {
+    var totalReadout = document.getElementById("totalReadout");
     var sizeReadout = document.getElementById("sizeReadout");
     var speedReadout = document.getElementById("speedReadout");
     var coherenceReadout = document.getElementById("coherenceReadout");
@@ -184,4 +184,5 @@ var totalReadout = document.getElementById("totalReadout");
         window.setTimeout(movePoints,dt)
     }
     movePoints();
+}
 </script>
