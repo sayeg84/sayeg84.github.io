@@ -14,7 +14,6 @@ Durante mi servicio social, trabajé como asistente del [Prof. Alessio Franci](h
               float: left;
               width: 50%;
             }
-            
             /* clearing after containers */
             .row::after {
               content: "";
@@ -33,30 +32,22 @@ Durante mi servicio social, trabajé como asistente del [Prof. Alessio Franci](h
   <meta charset="utf-8">
 <div class="row">
     <div class="column" align="left" id="asd">
-        
         <canvas id="fc" width="450" height="450">
                 Canvas not supported; update your browser.
-                </canvas>
-
+        </canvas>
     </div>
-    
     <div class="column" align="center" id="">
-
         <div>
             Total number of points = <span id="totalReadout"> 3000   </span> 
             <input type="range" min="100" max="3000" value="3000" id="totalSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class="slider">
-            
             <br>
             Point size =  <span id="sizeReadout">  5   </span> pix
             <br>
             <input type="range" min="1" max="5" step="0.1" value="2" id="sizeSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class="slider">
-            
-            
             <br>
             Maximum speed = <span id="speedReadout"> 0.5  </span> pix/s
             <br>
             <input type="range" min="1" max="5000" value="500" id="speedSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class="slider">
-            
             <br>
             Coherence = <span id="coherenceReadout"> 0.5  </span> 
             <br>
@@ -69,7 +60,6 @@ Durante mi servicio social, trabajé como asistente del [Prof. Alessio Franci](h
             Drift (rad / s):
             <br>
             <input type="text" id="driftBox" value="1" onchange="showAndUpdate();" class="textbox">
-
         </div>
     </div>
 </div>
@@ -91,35 +81,25 @@ var theta;
 var rand;
 //Function for updating the variables modified by sliders and textboxes
 function showAndUpdate() {
-
-
     totalReadout.innerHTML = Number(totalSlider.value);
     total=Number(document.getElementById("totalSlider").value);
-    
     sizeReadout.innerHTML = Number(sizeSlider.value);
     size=Number(document.getElementById("sizeSlider").value);
-
     speedReadout.innerHTML = Number(speedSlider.value)/1000;
     lambda=Number(document.getElementById("speedSlider").value)/1000;
-
     coherenceReadout.innerHTML = Number(coherenceSlider.value)/100;
     coherence=Number(document.getElementById("coherenceSlider").value)/100;
-    
     dtheta=Number(document.getElementById("driftBox").value)*2*Math.PI/(1000);
-
     coherentGroups=Number(document.getElementById("coherentGroupsBox").value);
-    
     N=Math.floor(total/coherentGroups);
     theta=2*Math.PI/coherentGroups;
     rand=Math.floor(total*(1-coherence));
 }
-
 //Initialization
 showAndUpdate();
 //defining drawing area
 var theCanvas=document.getElementById("fc");
 var context=theCanvas.getContext("2d");
-
 //Auxiliar modulus function
 function mod(n, m) {
     return ((n % m) + m) % m;
@@ -143,7 +123,6 @@ function drawPoints(){
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
     context.fillStyle="#000000";
     context.fillRect(0,0,theCanvas.width,theCanvas.height)
-
     for (i=0;i<total;i++){
         context.beginPath();
         context.arc(x[i],y[i],size,0,2*Math.PI);
