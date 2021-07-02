@@ -62,26 +62,21 @@ redirect_from:
   </div>
 
 <script >
-  var tempReadout = document.getElementById("tempReadout");
+var tempReadout = document.getElementById("tempReadout");
 var BReadout = document.getElementById("BReadout");
 var JReadout = document.getElementById("JReadout");
 var speedReadout = document.getElementById("speedReadout");
-
-
 const n = 50;
 var B = 0;
 var J = -2;
 var temp = 4;
-
 function randomSpin(){
-    // make random between 0 and 1
     var x = Math.floor(2*Math.random());
     return 2*x-1
 }
 function randomConfiguration(){
     var res = [];
     for(i=0; i<n;i++){
-        // auxiliary array to define whole row
         var aux = [];
         for(j=0; j<n;j++){
             aux.push(randomSpin());
@@ -90,11 +85,8 @@ function randomConfiguration(){
     }
     return res;
 }
-
-
 var sys = randomConfiguration();
 var step = 0;
-
 function mod(x,y){
     return ((x % y) + y)%y;
 }
@@ -110,10 +102,8 @@ function mag(){
 }
 
 function sqrLatPerNeighs(i,j){
-    // getting square lattice neighbors
     return [[mod(i+1,n),j],[mod(i-1,n),j],[i,mod(j+1,n)],[i,mod(j-1,n)]];
 }
-
 function neighSum(i,j){
     var neighs = sqrLatPerNeighs(i,j);
     var sum = 0;
@@ -122,7 +112,6 @@ function neighSum(i,j){
     }
     return sum;
 }
-
 function energy(){
     var sum = 0;
     for(i=0;i<n;i++){
@@ -132,66 +121,43 @@ function energy(){
     }
     return sum;
 }
-
 function randomLocation(){
     var i = Math.floor(n*Math.random());
     var j = Math.floor(n*Math.random());
     return [i,j];
 }
-
 function deltaEner(i,j){
     var aux = neighSum(i,j);
     var delta = 2*sys[i][j]*(B + J *aux);
     return delta;
 }
-
 function twoDigit(x){
     return (Math.round(x * 100) / 100).toFixed(2);
 }
-
 function showAndUpdate(){
-    // udpdating variables
     tempReadout.innerHTML = twoDigit(Number(tempSlider.value));
-    temp=Number(document.getElementById("tempSlider").value);
-    
+    temp=Number(document.getElementById("tempSlider").value);    
     BReadout.innerHTML = twoDigit(Number(BSlider.value));
     B=Number(document.getElementById("BSlider").value);
-
     JReadout.innerHTML = twoDigit(Number(JSlider.value));
     J=Number(document.getElementById("JSlider").value);
-
-    
 }
-
 function resetSys(){
     sys = randomConfiguration();
     step = 0;
 }
-
-//Initialization
 showAndUpdate();
-//defining drawing area
 var theCanvas=document.getElementById("fc");
 var context=theCanvas.getContext("2d");
-//var frac = 0.8;
-//window.addEventListener('resize', windowResize,false);
-//theCanvas.width  = frac*window.innerHeight;
-//theCanvas.height = frac*window.innerHeight;
-
-
-
-
 function drawPoints(){
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
     context.fillStyle="#CBCE91";
     context.fillRect(0,0,theCanvas.width,theCanvas.height);
     var w = theCanvas.width/n;
     var h = theCanvas.height/n;
-
     for (i=0;i<n;i++){
         for (j=0;j<n;j++){
             if (sys[i][j] > 0){
-                // draw only positive
                 context.beginPath();
                 context.rect(i*w,j*h,w,h);
                 context.fillStyle="#76528B";
@@ -200,14 +166,6 @@ function drawPoints(){
         }
     }
 }
-
-//function windowResize() {
-//    canvas.width  = frac*window.innerHeight;
-//    canvas.height = frac*window.innerHeight;
-//    drawPoints();
-//};
-
-
 function movePoints(){
     var aux = randomLocation();
     var i = aux[0];
@@ -220,12 +178,9 @@ function movePoints(){
     step++;
     tReadout.innerHTML = step;
     drawPoints();
-    //console.log(sys);
-    
     window.setTimeout(movePoints,1);
 }
 movePoints();
-
 </script>
 
 &nbsp;
