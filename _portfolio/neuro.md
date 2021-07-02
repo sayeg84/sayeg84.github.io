@@ -149,7 +149,7 @@ function movePoints(){
     }
     step++;
     drawPoints();
-    window.setTimeout(movePoints,dt)
+    window.setTimeout(movePoints,dt);
 }
 movePoints();
 
