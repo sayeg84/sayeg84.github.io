@@ -117,7 +117,7 @@ for (i=0;i<3000;i++){
 function drawPoints(){
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
     context.fillStyle="#000000";
-    context.fillRect(0,0,theCanvas.width,theCanvas.height)
+    context.fillRect(0,0,theCanvas.width,theCanvas.height);
     for (i=0;i<total;i++){
         context.beginPath();
         context.arc(x[i],y[i],size,0,2*Math.PI);
