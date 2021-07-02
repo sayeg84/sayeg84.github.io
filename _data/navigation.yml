@@ -10,7 +10,7 @@ main:
   - title: "Publicaciones"
     url: /publicaciones/
 
-- title: "Proyectos"
+  - title: "Proyectos"
     url: /proyectos/
 
   - title: "Blog"
