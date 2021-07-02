@@ -21,29 +21,29 @@ Durante mi servicio social, trabajé como asistente del [Prof. Alessio Franci](h
               display: table;
             } 
             .slider{
-                width: 50%;
+                width: 80%;
             }
             .textbox{
-                width: 30%;
+                width: 40%;
                 text-align: center;
             }
         </style>
     </head>
   <meta charset="utf-8">
 <div class="row">
-    <div class="column" align="left" id="asd">
-        <canvas id="fc" width="450" height="450">
+    <div style="width:550px;float:left" align="left" id="asd">
+        <canvas id="fc" width="550" height="550">
                 Canvas not supported; update your browser.
         </canvas>
     </div>
-    <div class="column" align="center" id="">
+    <div style="width:200px;float:left;padding-left:20px" align="center" id="">
         <div>
             Total number of points = <span id="totalReadout"> 3000   </span> 
             <input type="range" min="100" max="3000" value="3000" id="totalSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class="slider">
             <br>
             Point size =  <span id="sizeReadout">  5   </span> pix
             <br>
-            <input type="range" min="1" max="5" step="0.1" value="2" id="sizeSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class="slider">
+            <input type="range" min="1" max="8" step="0.1" value="2" id="sizeSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class="slider">
             <br>
             Maximum speed = <span id="speedReadout"> 0.5  </span> pix/s
             <br>
