@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Presentaciones"
-permalink: /presentaciones/
+title: "Eventos Académicos"
+permalink: /eventos/
 author_profile: true
 ---
 
@@ -10,14 +10,16 @@ author_profile: true
 <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
 
 {% endif %}
-
+<h2>
+  Presentaciones y pláticas
+</h2>
 {% for post in site.talks reversed %}
   {% include archive-single-talk.html %}
 {% endfor %}
 
-<h1>
+<h2>
 Estancias
-</h1>
+</h2>
 {% for post in site.internships reversed %}
   {% include archive-single-talk.html %}
 {% endfor %}

@@ -4,8 +4,8 @@ main:
   - title: "Cursos"
     url: /cursos/ 
   
-  - title: "Presentaciones"
-    url: /presentaciones/    
+  - title: "Eventos \n Academicos"
+    url: /eventos/    
 
   - title: "Publicaciones"
     url: /publicaciones/

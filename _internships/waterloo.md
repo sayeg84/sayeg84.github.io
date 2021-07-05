@@ -1,7 +1,7 @@
 ---
 title: "QOQI Group. Institute for Quantum Computing"
 collection: internships
-permalink: /presentaciones/iqc
+permalink: /eventos/iqc
 venue: "University of Waterloo"
 date: "June 2018 - August 2018"
 location: "Waterloo, ON. Canadá"

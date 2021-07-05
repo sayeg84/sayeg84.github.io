@@ -1,7 +1,7 @@
 ---
 title: "Department of Math and Computer Science"
 collection: internships
-permalink: /presentaciones/lethbridge
+permalink: /eventos/lethbridge
 venue: "University of Lethbridge"
 date: "June 2017 - August 2017"
 location: "Letbridge, AB. Canada."

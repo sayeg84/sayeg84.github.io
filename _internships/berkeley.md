@@ -1,7 +1,7 @@
 ---
 title: "Berkeley Energy and Climate Institute"
 collection: internships
-permalink: /presentaciones/berkeley
+permalink: /eventos/berkeley
 venue: "Berkeley Energy and Climate Institute"
 date: "December 2016 - January 2017"
 location: "3rd Floor, Sutardja Dai Hall. University of California, Berkeley. Berkeley, CA. EUA."
