@@ -23,7 +23,7 @@ redirect_from:
         display: table;
       } 
       .slider{
-          width: 60%;
+          width: 70%;
       }
       .textbox{
           width: 0%;
@@ -190,7 +190,7 @@ movePoints();
 
 Soy estudiante de Maestría en el Posgrado en Ciencias Matemáticas de la UNAM. Mi tutor es [Atahualpa Kraemer](http://www.fciencias.unam.mx/directorio/41583), del Departamento de Física de la Facultad de Ciencias. Antes de eso, estudié Física en la Facultad de Ciencias y Atahulapa también fue mi asesor de Tesis.
 
-Mis principales áreas de interés son la física computacional aplicada a la mecánica estadística. En particular, me interesan los sistemas discretos como los modelos tipo Ising y las cadenas poliméricas en una red. El modelado molecular, en particular de macromoléculas biológicas, también forma parte de mis intereses.  Me interesa también la probabilidad y estadística aplicadas (Métodos de Monte Carlo). Los principales lenguajes de programación en los que trabajo son Julia y Python. 
+Mis principales áreas de interés son la física computacional aplicada a mecánica estadística. En particular, me interesan los sistemas discretos simples (modelos tipo Ising, cadenas poliméricas en una red) y los sistemas continuos de muchos cuerpos (dinámica molecular). Más reciéntemente, estoy interesado en como se puede utilizar el aprendizaje estadístico para mejorar las simulaciones. Los principales lenguajes de programación en los que trabajo son Julia y Python. 
 
 En un plano más personal, me gusta toda la música, aunque principalmente escucho música electrónica. 
 

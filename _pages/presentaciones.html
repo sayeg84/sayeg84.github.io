@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Platicas y presentaciones"
+title: "Presentaciones"
 permalink: /presentaciones/
 author_profile: true
 ---
@@ -12,5 +12,12 @@ author_profile: true
 {% endif %}
 
 {% for post in site.talks reversed %}
+  {% include archive-single-talk.html %}
+{% endfor %}
+
+<h1>
+Estancias
+</h1>
+{% for post in site.internships reversed %}
   {% include archive-single-talk.html %}
 {% endfor %}

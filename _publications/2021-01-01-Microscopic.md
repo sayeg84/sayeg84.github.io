@@ -1,10 +1,13 @@
 ---
 title: "Microscopic Model of Intermediate Phase in Flexible to Rigid Transition"
 collection: publications
-permalink: /publicaciones/2021-01-01-Microscopic-Model-of-Intermediate-Phase-in-Flexible-to-Rigid-Transition
+permalink: /publicaciones/2021-microscopic
 date: 2021-01-01
 venue: 'Frontiers in Physics'
 paperurl: 'https://www.frontiersin.org/article/10.3389/fphy.2020.619320'
 citation: ' Aldo Pasos-Trejo,  Atahualpa Kraemer, &quot;Microscopic Model of Intermediate Phase in Flexible to Rigid Transition.&quot; Frontiers in Physics, 2021.'
 ---
-[Lo pueden consultar en este link](https://www.frontiersin.org/article/10.3389/fphy.2020.619320){:target="_blank"}
+
+Producto del trabajo de mi tesis de licenciatura y unos meses más de investigación. Para obtener más información sobre el proyecto, vayan a su [sitio](../../proyectos/intermedia)
+
+Pueden consultar el artículo en [este link](https://www.frontiersin.org/article/10.3389/fphy.2020.619320){:target="_blank"}
