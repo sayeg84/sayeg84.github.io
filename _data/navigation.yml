@@ -13,6 +13,9 @@ main:
   - title: "Proyectos"
     url: /proyectos/
 
+  - title: "CV"
+    url: /cv/
+    
   - title: "Blog"
     url: /blog-base/
     

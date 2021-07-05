@@ -1,5 +1,5 @@
 ---
-title: "Física Computacional"
+title: "Física Computacional 2021-1"
 collection: teaching
 type: "Semestre 2021-1"
 permalink: /cursos/fiscomp_2021-1

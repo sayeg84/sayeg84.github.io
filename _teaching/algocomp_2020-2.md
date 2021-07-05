@@ -1,5 +1,5 @@
 ---
-title: "Algoritmos Computacionales"
+title: "Algoritmos Computacionales 2020-2"
 collection: teaching
 type: "Semestre 2020-2"
 permalink: /cursos/algocomp_2020-2

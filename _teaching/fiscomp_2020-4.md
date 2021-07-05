@@ -1,5 +1,5 @@
 ---
-title: "Física Computacional"
+title: "Física Computacional 2020-4"
 collection: teaching
 type: "Semestre 2020-4 (Intersemestral)"
 permalink: /cursos/fiscomp_2020-4
