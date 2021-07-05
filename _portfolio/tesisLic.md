@@ -296,7 +296,7 @@ function twoDigit(x){
 }
 function showAndUpdate(){
     tempReadout.innerHTML = twoDigit(Number(tempSlider.value));
-    temp=Number(document.getElementById("tempSlider").value);    
+    temp=Number(document.getElementById("tempSlider").value);
     BReadout.innerHTML = twoDigit(Number(BSlider.value));
     B=Number(document.getElementById("BSlider").value);
     JReadout.innerHTML = twoDigit(Number(JSlider.value));
@@ -320,7 +320,7 @@ function drawPoints(){
     var w = theCanvas.width/n;
     var h = theCanvas.height/n;
     var r = Math.min(w,h)/3;
-    var ang = 2*Math.PI
+    var ang = 2*Math.PI;
     for(let i=0;i<n;i++){
         for(let j=0;j<n;j++){
             if (sys[i][j] > 0){
@@ -338,7 +338,7 @@ function drawPoints(){
                         var e2 = linearIndex(pos[0],pos[1]);
                         test1 = !isUndefined(bridArray.find(x => arrayEquals(x,[e1,e2])));
                         test2 = !isUndefined(bridArray.find(x => arrayEquals(x,[e2,e1])));
-                        rigid = rigid && (test1 || test2)
+                        rigid = rigid && (test1 || test2);
                         if (test1 || test2){
                             context.strokeStyle=flexc;
                             context.beginPath();
@@ -369,7 +369,7 @@ function movePoints(){
     var p = deltaEner(i,j);
     var r = Math.random();
     if (-p/temp > Math.log(r)) {
-        sys[i][j] = 1-sys[i][j] 
+        sys[i][j] = 1-sys[i][j];
     }
     step++;
     tReadout.innerHTML = step;
