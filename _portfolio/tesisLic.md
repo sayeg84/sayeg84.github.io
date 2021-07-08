@@ -311,7 +311,7 @@ function resetSys(){
 showAndUpdate();
 var theCanvas=document.getElementById("fc");
 var context=theCanvas.getContext("2d");
-function drawPoints(){
+function drawSystem(){
     var rigidc = "#00203FFF";
     var flexc = "#ADEFD1FF";
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
@@ -362,7 +362,7 @@ function drawPoints(){
         }
     }
 }
-function movePoints(){
+function advance(){
     var aux = randomLocation();
     var i = aux[0];
     var j = aux[1];
@@ -373,10 +373,10 @@ function movePoints(){
     }
     step++;
     tReadout.innerHTML = step;
-    drawPoints();
-    window.setTimeout(movePoints,1);
+    drawSystem();
+    window.setTimeout(advance,1);
 }
-movePoints();
+advance();
 </script>
 
 

@@ -55,7 +55,7 @@ redirect_from:
             <input type="range" min="-3" max="3" value="0" step="0.01" id="JSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
             <br>
-            <button type="button" onclick = "resetSys()">Reiniciar</button> 
+            <button type="button" onclick = "resetSystem()">Reiniciar</button> 
             <br>                    
       </div>
     </div>
@@ -142,14 +142,14 @@ function showAndUpdate(){
     JReadout.innerHTML = twoDigit(Number(JSlider.value));
     J=Number(document.getElementById("JSlider").value);
 }
-function resetSys(){
+function resetSystem(){
     sys = randomConfiguration();
     step = 0;
 }
 showAndUpdate();
 var theCanvas=document.getElementById("fc");
 var context=theCanvas.getContext("2d");
-function drawPoints(){
+function drawSystem(){
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
     context.fillStyle="#CBCE91";
     context.fillRect(0,0,theCanvas.width,theCanvas.height);
@@ -166,7 +166,7 @@ function drawPoints(){
         }
     }
 }
-function movePoints(){
+function advance(){
     var aux = randomLocation();
     var i = aux[0];
     var j = aux[1];
@@ -177,10 +177,10 @@ function movePoints(){
     }
     step++;
     tReadout.innerHTML = step;
-    drawPoints();
-    window.setTimeout(movePoints,1);
+    drawSystem();
+    window.setTimeout(advance,1);
 }
-movePoints();
+advance();
 </script>
 
 &nbsp;
