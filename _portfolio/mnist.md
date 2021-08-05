@@ -94,7 +94,7 @@ Para probar el modelo, escribe un dígito en el recuadro y presiona el botón pa
     }
     function startPaintingTouch(event) {
         paint = true;
-        getPositionTouch(event);
+        getPosition(event);
     }
     function getPosition(event) {
         coord.x = event.pageX - canvas.offsetLeft;
