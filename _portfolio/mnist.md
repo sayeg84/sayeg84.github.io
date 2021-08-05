@@ -43,6 +43,7 @@ Para probar el modelo, escribe un dígito en el recuadro y presiona el botón pa
         document.addEventListener('mouseup', stopPainting);
         document.addEventListener('touchend', stopPainting);
         document.addEventListener('mousemove', draw);
+        document.addEventListener('touchmove', draw);
         ctx.fillStyle="#FFFFFF";
         ctx.fillRect(0,0,canvas.width,canvas.height);
         layout = {title: "Prediction: ?",
@@ -178,14 +179,12 @@ Para probar el modelo, escribe un dígito en el recuadro y presiona el botón pa
         return number;
     }
     function predictValues(){
-        console.log(coord);
         let number = getData();
         number = tf.tensor(number);
         number = number.reshape([-1,784]);
         model.then((res)=>{
             let prediction = softMax(res.predict(number).dataSync());
             let digit = prediction.indexOf(Math.max(...prediction));
-            console.log(canvas.scrollTop);
             layout["title"] = "Prediction: " + digit;
             Plotly.newPlot(chartDiv, [{
                 type:"bar",
