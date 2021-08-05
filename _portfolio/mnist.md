@@ -7,10 +7,12 @@ collection: portfolio
 
 Por ser aproximadores universales de funciones, las redes neuronales son una herramienta sumamente útil para disintas aplicaciones, principalmente en reconocimiento de patrones. En particular, las redes neuronales que utilizan capas de convolución han resultado particularmente efectivas para.
 
-César Cossio y yo logramos entrenar una red convolucional usando la famosa base de datos de [MNIST](http://yann.lecun.com/exdb/mnist/) para el reconocimiento de dígitos. 
+César Cossio y yo logramos entrenar una red convolucional usando la famosa base de datos de [MNIST](http://yann.lecun.com/exdb/mnist/) para el reconocimiento de dígitos. El proyecto fue parte de un curso sobre aprendizaje estadístico, impartido por la profesora [Guillermina Eslava](https://lya.fciencias.unam.mx/eslava/) en el posgrado en Ciencias Matemáticas de la UNAM.
 
-<div style="float:left">
-<canvas id="canvas" width=280px height=280px>
+Para probar el modelo, escribe un dígito en el recuadro y presiona el botón para calificarlo
+
+<div style="float:left;text-align: center;">
+<canvas id="canvas" width=280 height=280 style="border:1px solid #000000;">
 </canvas>
 <br>
 <br>  
@@ -19,7 +21,8 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
 <br>  
 <button type="button" onclick = "predictValues()">Calificar</button> 
 </div>
-<div id="chart" style="width:400px;height:280px;float:left;padding-left:20px"></div>
+<div id="chart" style="width:450px;height:320px;float:left;padding-left:20px">
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-2.3.0.min.js"></script>
 <script>
@@ -32,7 +35,6 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
     }
     let model = loadModel();
     let predTest = [];
-    console.log(model);
     let coord = { x: 0, y: 0 };
     let paint = false;
     window.addEventListener('load', ()=>{     
@@ -43,7 +45,7 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
         document.addEventListener('mousemove', draw);
         ctx.fillStyle="#FFFFFF";
         ctx.fillRect(0,0,canvas.width,canvas.height);
-        layout = {title:"Prediction",
+        layout = {title: "Prediction: ?",
                 xaxis:{title:"Digit",
                     tickmode:"array",
                     tickvals:[0,1,2,3,4,5,6,7,8,9],
@@ -55,11 +57,13 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
                     ticktext:["-100","-80","-60","-40","-20","0"],
                     range:[-100,0]
             },
+                height:320,
+                width: 450,
                 marign:{
-                    l:10,
-                    r:10,
-                    t:10,
-                    b:10
+                    l:0,
+                    r:0,
+                    t:-5,
+                    b:0
                 }
             };
         Plotly.newPlot(chartDiv, [{
@@ -74,6 +78,7 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.fillStyle="#FFFFFF";
         ctx.fillRect(0,0,canvas.width,canvas.height);
+        layout["title"] = "Prediction: ?";
         Plotly.newPlot(chartDiv, [{
             x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
             y: [1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100],
@@ -91,8 +96,8 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
         getPositionTouch(event);
     }
     function getPosition(event) {
-        coord.x = event.clientX - canvas.offsetLeft;
-        coord.y = event.clientY - canvas.offsetTop;
+        coord.x = event.pageX - canvas.offsetLeft;
+        coord.y = event.pageY - canvas.offsetTop;
     }
     function getPositionTouch(event) {
         coord.x = event.touches[0].pageX - canvas.offsetLeft;
@@ -106,9 +111,9 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
             return;
         }
         ctx.beginPath();
-        ctx.lineWidth=15;
+        ctx.lineWidth=20;
         ctx.lineCap = "round";
-        ctx.strokeStyle = "#030204";
+        ctx.strokeStyle = "#000000";
         ctx.moveTo(coord.x, coord.y);
         getPosition(event);
         ctx.lineTo(coord.x, coord.y);
@@ -173,12 +178,15 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
         return number;
     }
     function predictValues(){
-        number = getData();
+        console.log(coord);
+        let number = getData();
         number = tf.tensor(number);
         number = number.reshape([-1,784]);
         model.then((res)=>{
             let prediction = softMax(res.predict(number).dataSync());
-            console.log(prediction);
+            let digit = prediction.indexOf(Math.max(...prediction));
+            console.log(canvas.scrollTop);
+            layout["title"] = "Prediction: " + digit;
             Plotly.newPlot(chartDiv, [{
                 type:"bar",
                 x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -189,6 +197,3 @@ César Cossio y yo logramos entrenar una red convolucional usando la famosa base
         });
     }
 </script>
-
-
-El proyecto fue parte de un curso sobre aprendizaje estadístico, impartido por la profesora [Guillermina Eslava](https://lya.fciencias.unam.mx/eslava/) en el posgrado en Ciencias Matemáticas de la UNAM.
