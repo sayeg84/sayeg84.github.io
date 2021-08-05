@@ -1,6 +1,6 @@
 ---
 title: "Red neuronal para el reconocimiento de dígitos"
-excerpt: "Red neuronal convolucional entrenada sobre"
+excerpt: "Red neuronal convolucional entrenada sobre los datos de MNIST"
 permalink: /proyectos/mnist
 collection: portfolio
 ---

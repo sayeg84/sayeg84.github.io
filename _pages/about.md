@@ -194,7 +194,7 @@ Mis principales áreas de interés son la física computacional aplicada a mecá
 
 En un plano más personal, me gusta toda la música, aunque principalmente escucho música electrónica. 
 
-No tengo un lugar en dónde estar en Ciudad Universitaria, por lo que la única manera de contactarme es mediante mis correos electrónico: [sayeg@ciencias.unam.mx](mailto:sayeg@ciencias.unam), [sayeg84@gmail.com](mailto:sayeg84@gmail.com)
+No tengo un lugar en dónde estar en Ciudad Universitaria, por lo que la única manera de contactarme es mediante mis correos electrónicos: [sayeg@ciencias.unam.mx](mailto:sayeg@ciencias.unam), [sayeg84@gmail.com](mailto:sayeg84@gmail.com)
 
 # Página
 
