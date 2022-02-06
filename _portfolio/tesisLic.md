@@ -261,7 +261,7 @@ function cycles(sys){
     for(let i=0;i<n*n;i++){
         normal += edgList[i].length;
     }
-    return normal/2 - brid;
+    return Math.floor(normal/2) - brid;
 }
 function energy(sys){
     var sum = 0;
