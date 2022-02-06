@@ -190,7 +190,7 @@ function makeLinearNeighLatt(){
     return res;
 }
 var linearNeighLatt= makeLinearNeighLatt(); 
-function neighSum(i,j){
+function neighSum(sys,i,j){
     var neighs = neighLatt[i][j];
     var sum = 0;
     for(let k=0;k<neighs.length;k++){
@@ -267,7 +267,7 @@ function energy(sys){
     var sum = 0;
     for(let i=0;i<n;i++){
         for(let j=0;j<n;j++){
-            sum += sys[i][j]*(-B - J/2*neighSum(i,j));
+            sum += sys[i][j]*(-B - J/2*neighSum(sys,i,j));
         }   
     }
     return sum + C*cycles(sys);
