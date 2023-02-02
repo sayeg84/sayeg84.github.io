@@ -2,7 +2,7 @@
 title: "Física Computacional 2021-1"
 collection: teaching
 type: "Semestre 2021-1"
-permalink: /cursos/fiscomp_2021-1
+permalink: /teaching/fiscomp_2021-1
 venue: "-"
 date: 2020-09-21
 location: "Facultad de Ciencias, UNAM."
@@ -11,7 +11,6 @@ location: "Facultad de Ciencias, UNAM."
 Grupo 8423, con el ayudante David Leonardo Galicia Praskauer y Crhistian Alejandro Benítez Abarca. Este curso se dará de manera completamente remota.
 
 # Acerca del curso
-
 
 Todo las clases del curso están disponibles en mi canal de YouTube, la playlist titulada [Física Computacional 2021-1](https://youtube.com/playlist?list=PLwEkAnYJ7sRaKGxybuS9yxmdGcOAKhW9v). Todas las clases se impartieron en línea durante dicho intersemestral.
 

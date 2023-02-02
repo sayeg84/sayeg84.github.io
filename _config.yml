@@ -6,8 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "es-MX"
-title                    : "Inicio"
+locale                   : "en-MX"
+title                    : "Start"
 title_separator          : "-"
 name                     : &name "Aldo Sayeg Pasos Trejo"
 description              : &description "personal description"
@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &sayeg84
 facebook:
   username               :
   app_id                 :
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Aldo Sayeg Pasos Trejo"
   avatar           : "profile.jpg"
-  bio              : "Estudiante de posgrado en la Facultad de Ciencias."
-  location         : "Ciudad de México, México."
+  bio              : "PhD student @ Clementi Group, FU Berlin."
+  location         : "Berlin, Germany."
   employer         :
   pubmed           : 
   googlescholar    : 
-  email            : "sayeg@ciencias.unam.mx"
+  email            : "sayeg84@zedat.fu-berlin.de"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -106,10 +106,10 @@ author:
   orcid            : 
   pinterest        :
   soundcloud       :
-  stackoverflow    : https://stackoverflow.com/users/11344029/aldo-sayeg
+  stackoverflow    : 11344029/sayeg84
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          : sayeg84
   vine             :
   weibo            :
   xing             :

@@ -1,25 +1,23 @@
 ---
-title: "Red neuronal para el reconocimiento de dígitos"
-excerpt: "Red neuronal convolucional entrenada sobre los datos de MNIST"
-permalink: /proyectos/mnist
+title: "Simple MNIST Classifier"
+excerpt: "Convolutional Neural Network for the image classificatio problem over the MNIST dataset"
+permalink: /projects/mnist
 collection: portfolio
 ---
 
-Por ser aproximadores universales de funciones, las redes neuronales son una herramienta sumamente útil para disintas aplicaciones, principalmente en reconocimiento de patrones. En particular, las redes neuronales que utilizan capas de convolución han resultado particularmente efectivas para.
+A classical problem in Machine Learning is the accurate classification of [MNIST](http://yann.lecun.com/exdb/mnist/), a dataset of images of handwritten digits. This was a final project what I did in collaboration with Cossio for an Statistical Machine Learning course imparted by [Guillermina Eslava](https://lya.fciencias.unam.mx/eslava/).
 
-César Cossio y yo logramos entrenar una red convolucional usando la famosa base de datos de [MNIST](http://yann.lecun.com/exdb/mnist/) para el reconocimiento de dígitos. El proyecto fue parte de un curso sobre aprendizaje estadístico, impartido por la profesora [Guillermina Eslava](https://lya.fciencias.unam.mx/eslava/) en el posgrado en Ciencias Matemáticas de la UNAM.
-
-Para probar el modelo, escribe un dígito en el recuadro y presiona el botón para calificarlo
+You can test the model by writting a digit in the squarebox and pressing the buttons.
 
 <div style="float:left;text-align: center;">
 <canvas id="canvas" width=280 height=280 style="border:1px solid #000000;">
 </canvas>
 <br>
 <br>  
-<button type="button" onclick = "resetCanvas()">Borrar</button> 
+<button type="button" onclick = "resetCanvas()">Erase</button> 
 <br>
 <br>  
-<button type="button" onclick = "predictValues()">Calificar</button> 
+<button type="button" onclick = "predictValues()">Classify</button> 
 </div>
 <div id="chart" style="width:450px;height:320px;float:left;padding-left:20px">
 </div>
@@ -30,7 +28,7 @@ Para probar el modelo, escribe un dígito en el recuadro y presiona el botón pa
     const ctx = canvas.getContext("2d");
     const chartDiv = document.getElementById('chart');
     function loadModel(){
-        let model = tf.loadGraphModel('https://raw.githubusercontent.com/sayeg84/sayeg84.github.io/master/files/proyectos/mnist/model.json');    
+        let model = tf.loadGraphModel('https://raw.githubusercontent.com/sayeg84/sayeg84.github.io/master/files/projects/mnist/model.json');    
         return model;
     }
     let model = loadModel();

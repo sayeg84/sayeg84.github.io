@@ -1,11 +1,12 @@
 ---
-title: "Pruebas neurológicas interactivas"
-excerpt: "Un conjunto de pruebas neurológicas para evaluar la atención de un individuo"
-permalink: /proyectos/neuro
+title: "Interactive attention test"
+permalink: /projects/neuro
 collection: portfolio
 ---
 
-Durante mi servicio social, trabajé como asistente del [Prof. Alessio Franci](https://sites.google.com/site/francialessioac/) en la UNAM. Entre muchos trabajos, ayudé a programar una simple utilizada por él para intentar medir la capacidad de atención de una persona.
+This a basic simulation that can be used to measure the attention capacity of a person. This was developed as a project for [Prof. Alessio Franci](https://sites.google.com/site/francialessioac/).
+
+Change the parameters of the simulation and test how many coherent (i.e. similar in movement) groups of particles can you detect.
 
 <head>
         <style>

@@ -1,11 +1,10 @@
 ---
-title: "Algoritmos Computacionales 2020-2"
+title: "Algoritmos Computacionales"
 collection: teaching
 type: "Semestre 2020-2"
-permalink: /cursos/algocomp_2020-2
-venue: "Aula de Cómputo 1, Departamento de Física"
+permalink: /teaching/algocomp_2020-2
 date: 2020-07-29
-location: "Facultad de Ciencias, UNAM."
+location: "Faculty of Sciences, UNAM."
 ---
 
 Grupo 3009, curso perteneciente al cuarto semestre de la licenciatura en Física Biomédica, con el ayudante David Leonardo Galicia Praskauer. 

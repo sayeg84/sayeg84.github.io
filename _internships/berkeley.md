@@ -1,14 +1,12 @@
 ---
 title: "Berkeley Energy and Climate Institute"
 collection: internships
-permalink: /eventos/berkeley
+permalink: /events/berkeley
 venue: "Berkeley Energy and Climate Institute"
 date: "December 2016 - January 2017"
 location: "3rd Floor, Sutardja Dai Hall. University of California, Berkeley. Berkeley, CA. EUA."
 ---
 
-Trabajé 7 semanas como interno en un proyecto que consistió en utilizar SWITCH, un programa de modelación de sistemas de producción y consumo de electricidad que crea escenarios de inversión futuros con enfoque en energía renovable. El laboratorio era dirigido por [Daniel Kammen](http://kammen.berkeley.edu/), y yo trabajé bajo la supervisión directa de  [Sergio Castellanos](https://www.sergiocastellanos.com/about-me.html)
+Worked for 7 weeks as intern in a project trying to appy SWITCH, a electrical-grid modelling program with a focus on developing investment strategies focused on renewable energies. The lab has headed by [Daniel Kammen](http://kammen.berkeley.edu/) and I was under supervision of [Sergio Castellanos](https://www.sergiocastellanos.com/about-me.html).
 
-Mi aportación al proyecto consistió en realizar la limpieza y la homologación de los datos al formato necesario para correr la simulación, así como realizar un análisis estadístico básico de . Todo el trabajo lo realice con Python (Pandas) y SQL (PostreSQL).
-
-Dicho trabajo culminó en una publicación, que pueden revisar en [esta pagina](../../publicaciones/2018-exploring)
+My work in the project consisted in the data sanitization for all the data inputs that the model need to run, and also by making a coarse estimation of the Mexican electrical distribution grid. You can check the publication that arised from this work here [esta pagina](../../publicaciones/2018-exploring).

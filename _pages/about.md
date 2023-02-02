@@ -42,15 +42,15 @@ redirect_from:
         <div style="display: inline-block">
             t = <span id="tReadout"> 0   </span>  
             <br>
-            kT (aleatoreidad) = <span id="tempReadout"> 4   </span> 
+            kT (randomness) = <span id="tempReadout"> 4   </span> 
             <br>
             <input type="range" min="0.01" max="5" value="4" step="0.01" id="tempSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
-            B (dirección) = <span id="BReadout"> 0   </span> 
+            B (direction) = <span id="BReadout"> 0   </span> 
             <br>
             <input type="range" min="-3" max="3" value="0" step="0.01" id="BSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
-            J (interacción) = <span id="JReadout"> -2   </span> 
+            J (interaction) = <span id="JReadout"> -2   </span> 
             <br>
             <input type="range" min="-3" max="3" value="0" step="0.01" id="JSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
@@ -185,20 +185,24 @@ advance();
 
 &nbsp;
 
+# About me
 
-# Acerca de mí
+I am a PhD Student under the supervision of [Cecilia Clementi](https://www.physik.fu-berlin.de/en/einrichtungen/ag/ag-clementi/index.html) at the [IMPRS-BAC](https://www.molgen.mpg.de/IMPRS). Before that, I did my Bachelor's in Physics and a Master's in Math at the National Autonomous University of Mexico (UNAM) under the supervision of [Atahualpa Kraemer](http://www.fciencias.unam.mx/directorio/41583).
 
-Soy estudiante de Maestría en el Posgrado en Ciencias Matemáticas de la UNAM. Mi tutor es [Atahualpa Kraemer](http://www.fciencias.unam.mx/directorio/41583), del Departamento de Física de la Facultad de Ciencias. Antes de eso, estudié Física en la Facultad de Ciencias y Atahulapa también fue mi asesor de Tesis.
+My main research area is the simlation of biological macromolecules using Computational Statistical Mechanics and Machine Learning. I am also interested in Artificial Intelligence, Numerical Analysis, Complex Systems and Computability Theory. 
 
-Mis principales áreas de interés son la física computacional aplicada a mecánica estadística. En particular, me interesan los sistemas discretos simples (modelos tipo Ising, cadenas poliméricas en una red) y los sistemas continuos de muchos cuerpos (dinámica molecular). Más reciéntemente, estoy interesado en como se puede utilizar el aprendizaje estadístico para mejorar las simulaciones. Los principales lenguajes de programación en los que trabajo son Julia y Python. 
+On a personal side, most of my hobbies are Art-related: Music (Spotify ranks my favorite genres as Hip Hop, Electronica and Experimental), Films and Books. I also enjoy discussing politics. Se habla español.
 
-En un plano más personal, me gusta toda la música, aunque principalmente escucho música electrónica. 
+You can contact me through email: 
 
-No tengo un lugar en dónde estar en Ciudad Universitaria, por lo que la única manera de contactarme es mediante mis correos electrónicos: [sayeg@ciencias.unam.mx](mailto:sayeg@ciencias.unam), [sayeg84@gmail.com](mailto:sayeg84@gmail.com)
+- sayeg84 [at] gmail [dot] com
+- sayeg84 [at] zedat [dot] fu-berlin [dot] de
+- sayeg [at] molgen [dot] mpg [dot] de
 
-# Página
 
-Esta página es personal, creada utilizando GitHub Pages a partir de una plantilla disponible [aquí](https://github.com/academicpages)
+## This website
+
+This a personal academic page gerated via Ruby and Jekyll. You can learn more about it [here](https://github.com/academicpages)
 
 
 

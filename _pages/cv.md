@@ -9,95 +9,78 @@ redirect_from:
 
 {% include base_path %}
 
-## Experiencia Laboral
+## Work Experience
 
-* Profesor de Asignatura "A"
-  * Facultad de Ciencias, UNAM
-  * Enero 2020 - Presente
-  * Imparto diversos curso del departamento de Física de la Facultad de Ciencias, entre los que se encuentran: **Física computacional**, una introducción práctica a los métodos numéricos, y **Algoritmos Computacionales**, una introducción a la programación básica. 
+* Research Assistant and PhD student
+  * Freie Universitat Berlin.
+  * September 2022 - 
+  * Research and development of Coarse Grained models based on Neural Networks force fields to study protein dynamics.
 
-* Ayudante de Profesor de Asignatura "A"/"B"
-  * Facultad de Ciencias, UNAM
-  * Enero 2018 - Diciembre 2019
-  * Trabajé impartiendo clase dos veces por semana y calificando tareas en diversos cursos:
+* Software Development Engineer 
+  * Altair Engineering.
+  * September 2021 - July 2022
+  * Part of the Meshing and Geometry team, developing Hypermesh, the main meshing tool of Hyperworks, an program for Finite Element Analysis widely used in the car industry. My work consisted mostly on the mantainence of codebase and implementing new features for mesh post processing.
 
-   - **-** 2018-2: Cálculo Diferencial e Integral I con la [Prof. Elena de Oteyza](http://www.fciencias.unam.mx/directorio/33904)
-   - **-** 2019-1: Física Computacional con el [Prof. David P. Sanders](http://sistemas.fciencias.unam.mx/~dsanders/)
-   - **-** 2019-2: Cálculo Diferencial e Integral II con la [Prof. Luz de Teresa de Oteyza](https://www.matem.unam.mx/fsd/deteresa)
-   - **-** 2020-1: Cálculo Diferencial e Integral I con el [Prof. Lauro Morales](http://www.fciencias.unam.mx/directorio/63912)
+* Lecturer
+  * Faculty of Sciences, UNAM.
+  * January 2020 - July 2022
+  * Imparted lectures in the Physics Department such as **Computational Physics**, a practical introducion to numerical methods for physics, and **Computagional Algorithms**, an introduction to basic programming. My work consisted on planning a sylllabus and creating all materials for the class, and also imparting lecture twice a week.
+
+* Teacher Assistant
+  * Faculty of Sciences, UNAM.
+  * January 2018 - December 2019
+  * Worked as a teacherin the Physics and Math Department. My work consisted on giving tutorials and grading homework and exams. I took part in courses such as **Calculus 1,2,3** and **Computational Physics**.
 
   
 
-## Educación
+## Education
 
-### Licenciatura en Física
+### Bachelor's Degree in Physics
 
-*Universidad Nacional Autónoma de México*
+*National Autonomous University of Mexico*
 
-*Facultad de Ciencias (Agosto 2013 - Mayo 2019)*
+*Faculty of Sciences (August 2013 - May 2019)*
 
-Hice mi tesis sobre métodos de Monte Carlo con Cadenas de Markov paras simular [transiciones de fase en sólidos amorfos](../proyectos/intermedia). Todas las simulaciones se programaron sin el uso de librerías auxiliares.
+Thesis project on an Ising-like model to try to reproduce [phase transitions in Chalcogenide Glasses](../projects/intermedia).
 
-### Maestría en Ciencias Matemáticas
+### Master's Degree in Mathematics
 
-*Universidad Nacional Autónoma de Méxco*
+*National Autonomous University of Mexico*
 
-*Posgrado en Ciencias Matemáticas (Agosto 2019 - Julio 2021)*
+*Graduate program in Mathematical Sciences (August 2019 - August 2022)*
 
-Bajo la tutoría del Dr. Atahualpa Kraemer. Actualmente desarrollo mi tesis sobre una solución aproximada para un problema de geometría computacional mediante optimización con metaheurísticas. 
+Worked under supervision of Prof. Atahualpa Kraemer with a project based on applying minimization to see the Locking Transition in 3D polygonal chains.
 
-## Estancias de Investigación
+## Research Internships
 
   <ul>{% for post in site.internships %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
 
-## Programación 
+## Coding 
 
-* Julia (Avanzado)
-* Python (TensorFlow, Scikit-learn, Pandas, Matplotlib, Networkx) (Avanzado)
-* Javascript (Básico)
-* SQL (PostreSQL) (Básico)
-* C/C++ (Básico)
-* Java (Básico)
-
-## Software
-
-* Microsoft Office (Excel, Power Point, Word y One Note) (6 años)
-* Wolfram Mathematica (4 años)
-* LATEX (4 años)
-* Jupyter (4 años)
-* Visual Studio Code (4 años)
-* Unix (4 años)
+* Julia (Advanced)
+* Python (TensorFlow, PyTorch, Scikit-learn, Pandas, Matplotlib, Networkx) (Advanced)
+* C/C++ (Medium)
+* Javascript (Basic)
+* SQL (PostreSQL) (Basic)
+* Java (Basic)
 
 
-## Publicaciones
+## Publications
 
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-## Presentaciones
+## Presentations
 
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
 
-## Cursos
-
-* **XIX Escuela de Probabilidad y Estadística**
-
-Escuela organizada por el Centro de Investigaci ́on en Matem ́aticas (CIMAT), llevada a cabo del 19 al 23 de Abril de 2021
-
-* **XIV Escuela Mexicana de Física Estadística y Sistemas Complejos**
-
-Escuela sobre física estadística celebrada en la facultad de ciencias del 5 al 8 de Noviembre de 2019.
-
-* **Undergraduate School for Quantum Information Processing**
-
-Escuela de verano sobre teoría de la información cuántica y cómputo cuántico celebrada  en  el  Instituto  para  la  Computación  Cuántica de  la  Universidad  de  Waterloo  enCanad ́a del 25 de Mayo al 5 de Junio de 2018
   
-## Docencia
+## Teaching
 
 <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}

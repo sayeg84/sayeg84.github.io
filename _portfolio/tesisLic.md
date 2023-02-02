@@ -1,16 +1,16 @@
 ---
-title: "Modelo microscópico para la fase intermedia"
-excerpt: "Intento por recuperar desde un modelo microscópico la fase intermedia encontrada en vidrios calcogenoides"
-permalink: /proyectos/intermedia
+title: "Microscopic model for the intermediate phase"
+excerpt: "Simulating a double phase transition in Chalcogenide Glasses"
+permalink: /projects/intermediate
 collection: portfolio
 ---
 
-Para mi tesis de licenciatura, trabajé con un modelo de gas de red (equivalente al modelo de Ising) modificado sobre redes en dos dimensiones. El hamiltoniano del sistema consistía en 
+For my bachelors thesis, I created a Lattice Gas model (equivalent to an Ising model) over 2D networks. The model had the following hamiltonian
 \begin{equation}
 H(\sigma) = -\mu \sum_{i} \sigma_i - J \sum_{\langle i,j \rangle} \sigma_i \sigma_j  + C \sum_{\langle i,j \rangle \in L} \sigma_i \sigma_j  
 \end{equation}
 
-Con $L$ el conjunto de todos los aristas que formaban ciclos en la gráfica asociada a la red del sistema. Esta modificación pretende tomar en cuenta la rigidez que existiría en un sólido amorfo que tuviera una estructura atómica similiar a la de la red existente en el sistema. Para valores escogidos de $C$, el sistema buscaba una configuración distinta de totalmente rígida o totalmente sin enlaces, llegando a un intermedio similiar a un árbol máximo generador.
+With $L$ the set of all the edges in cycles over the graph associated to the system. This modification integrated the rigidity of the molecular network into the hamiltonian. For certain values of $C$, the system dended towards configurations where all cycles where avoided, similar to a maximum spanning tree.
 
 <head>
   <style>
@@ -380,4 +380,4 @@ advance();
 </script>
 
 
-El código del proyecto se puede ver en [github](https://github.com/sayeg84/latticeModels). El proyecto creció lo suficiente para generar una [publicación](../publicaciones/2021-microscopic)
+You can check the source code for the project [here](https://github.com/sayeg84/latticeModels). There was also a [publication](../publicaciones/2021-microscopic) related to this project.

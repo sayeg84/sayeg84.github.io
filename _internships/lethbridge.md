@@ -1,16 +1,14 @@
 ---
 title: "Department of Math and Computer Science"
 collection: internships
-permalink: /eventos/lethbridge
+permalink: /events/lethbridge
 venue: "University of Lethbridge"
 date: "June 2017 - August 2017"
 location: "Letbridge, AB. Canada."
 ---
 
-Trabajé durante 12 semanas bajo la supervición de [Jackie Rice](https://www.ulethbridge.ca/artsci/dr-jackie-rice) en un proyecto de investigación orientado a circuitos lógicos reversibles. El proyecto me interesaba ya que la lógica y el cómputo reversible es el equivalente clásico de la computación cuántica.
+Worked during 12 weeks under the supervision of [Jackie Rice](https://www.ulethbridge.ca/artsci/dr-jackie-rice) in a research project oriented to reversible logic circuits, which are the classical analogous of quantum logic circuits. 
 
-En la primera parte del proyecto, trabajé modificando y creando un programa  cuya finalidad era intentar optimizar circuitos reversibles haciendo template matching para compuertas tipo Fredkin. La finalidad de esto era intentar optimizar circuitos reversibles existentes.
+My project was splitted in two parts. In the first one, I worked augmenting a program to optimize reversible circuits by reducing the number of gates using a template matching algorithm. On the second part, I created documentation and a guide for [Revkit](http://msoeken.github.io/revkit.html), a toolkig for reversible circuit synthesis. The guide and documentation can be accessed [here](https://sayeg84.github.io/cirkit/)
 
-En la segunda parte del proyecto, me encargué de crear una guía de soporte para [Revkit](http://msoeken.github.io/revkit.html), un software para trabajar con circuitos lógicos reversibles, en particular, para resolver problemas de síntesis de circuitos. Se puede acceder a dicha guía en [este link](https://sayeg84.github.io/cirkit/)
-
-Esta estancia se realizó como parte del programa del programa [Globalink Research Internship](https://www.mitacs.ca/en/programs/globalink/globalink-research-internship) de MITACS.
+This research internship was part of the [MITACS Globalink Research Internship](https://www.mitacs.ca/en/programs/globalink/globalink-research-internship).
