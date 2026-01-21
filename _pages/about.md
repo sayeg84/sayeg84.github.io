@@ -55,7 +55,7 @@ redirect_from:
             <input type="range" min="-3" max="3" value="0" step="0.01" id="JSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
             <br>
-            <button type="button" onclick = "resetSystem()">Reiniciar</button> 
+            <button type="button" onclick = "resetSystem()">Restart</button> 
             <br>                    
       </div>
     </div>

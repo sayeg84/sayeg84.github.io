@@ -61,7 +61,7 @@ With $L$ the set of all the edges in cycles over the graph associated to the sys
             <input type="range" min="0" max="1" value="0.9" step="0.01" id="CSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
             <br>
-            <button type="button" onclick = "resetSys()">Reiniciar</button> 
+            <button type="button" onclick = "resetSys()">Restart</button> 
             <br>                    
       </div>
     </div>

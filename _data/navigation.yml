@@ -1,17 +1,15 @@
 # main links links
 main:
-  
-  - title: "Teaching"
-    url: /teaching/ 
-  
-  - title: "Academic \n Events"
-    url: /events/    
+
+  - title: "Projects"
+    url: /projects/
 
   - title: "Publications"
     url: /publications/
 
-  - title: "Projects"
-    url: /projects/
+  - title: "Teaching"
+    url: /teaching/ 
+  
 
   - title: "CV"
     url: /cv/
