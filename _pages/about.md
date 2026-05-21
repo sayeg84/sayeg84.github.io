@@ -33,12 +33,12 @@ redirect_from:
 </head>
 <meta charset="utf-8">
   <div class="row">
-      <div style="width=450px;float:left;" align="center" id="asd">    
+      <div style="width:450px;float:left;" align="center" id="asd">    
         <canvas id="fc" width="450" height="450">
                 Canvas not supported; update your browser.
         </canvas>
       </div>
-      <div style="width=200px;float:left;text-align: center;" align="center" id="">
+      <div style="width:200px;float:left;text-align: center;" align="center" id="">
         <div style="display: inline-block">
             t = <span id="tReadout"> 0   </span>  
             <br>
