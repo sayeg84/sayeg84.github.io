@@ -315,7 +315,7 @@ function drawSystem(){
     var rigidc = "#00203FFF";
     var flexc = "#ADEFD1FF";
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
-    context.fillStyle="#FFFFFF";
+    context.fillStyle=getComputedStyle(canvas).backgroundColor;
     context.fillRect(0,0,theCanvas.width,theCanvas.height);
     var w = theCanvas.width/n;
     var h = theCanvas.height/n;
@@ -380,4 +380,4 @@ advance();
 </script>
 
 
-You can check the source code for the project [here](https://github.com/sayeg84/latticeModels). There was also a [publication](../publicaciones/2021-microscopic) related to this project.
+You can check the source code for the project [here](https://github.com/sayeg84/latticeModels). There was also a [publication](../p/publication/2021-02-01-Microscopic-Model-of-Intermediate-Phase-in-Flexible-to-Rigid-Transition) related to this project.

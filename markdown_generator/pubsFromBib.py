@@ -27,7 +27,7 @@ import re
 #todo: incorporate different collection types rather than a catch all publications, requires other changes to template
 publist = {
     "proceeding": {
-        "file" : "macroscopic2021.bib",
+        "file" : "conferences.bib",
         "venuekey": "booktitle",
         "venue-pretext": "In the proceedings of ",
         "collection" : {"name":"publications",
@@ -35,7 +35,7 @@ publist = {
         
     },
     "journal":{
-        "file": "macroscopic2021.bib",
+        "file": "journals.bib",
         "venuekey" : "journal",
         "venue-pretext" : "",
         "collection" : {"name":"publications",
@@ -60,6 +60,7 @@ for pubsource in publist:
 
     #loop through the individual references in a given bibtex file
     for bib_id in bibdata.entries:
+        print(f"treating {bib_id}")
         #reset default date
         pub_year = "1900"
         pub_month = "01"

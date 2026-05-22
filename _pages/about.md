@@ -202,7 +202,7 @@ You can contact me through email:
 
 ## This website
 
-This a personal academic page gerated via Ruby and Jekyll. You can learn more about it [here](https://github.com/academicpages)
+This a personal academic page generated via Ruby and Jekyll. You can learn more about it [here](https://github.com/academicpages)
 
 
 
