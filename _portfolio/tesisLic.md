@@ -312,7 +312,7 @@ showAndUpdate();
 var theCanvas=document.getElementById("fc");
 var context=theCanvas.getContext("2d");
 function drawSystem(){
-    var rigidc = "#00203FFF";
+    var rigidc = "#0B2D4D";
     var flexc = "#ADEFD1FF";
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
     context.fillStyle=getComputedStyle(theCanvas).backgroundColor;
