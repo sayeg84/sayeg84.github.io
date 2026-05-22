@@ -1,6 +1,6 @@
 ---
-title: "Atl ustractive synth"
-excerpt: "Basic substractive synth "
+title: "Atl subtractive synth"
+excerpt: "Basic subtractive synth "
 permalink: /projects/atl
 collection: portfolio
 ---
