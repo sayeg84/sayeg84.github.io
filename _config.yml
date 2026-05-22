@@ -8,6 +8,7 @@
 
 # Site Settings
 locale                   : "en-MX"
+site_theme               : "default"
 title                    : "Start"
 title_separator          : "-"
 name                     : &name "Aldo Sayeg Pasos Trejo"
