@@ -136,7 +136,7 @@ for pubsource in publist:
                     md += "\npaperurl: '" + b["url"] + "'"
                     url = True
 
-            md += "\ncitation: '" + html_escape(citation) + "'"
+            #md += "\ncitation: '" + html_escape(citation) + "'"
 
             md += "\n---"
 
