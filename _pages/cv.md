@@ -85,3 +85,4 @@ Worked under supervision of Prof. Atahualpa Kraemer with a project based on appl
 <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+
