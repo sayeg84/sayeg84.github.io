@@ -315,7 +315,7 @@ function drawSystem(){
     var rigidc = "#00203FFF";
     var flexc = "#ADEFD1FF";
     context.clearRect(0,0,theCanvas.width,theCanvas.height);
-    context.fillStyle=getComputedStyle(canvas).backgroundColor;
+    context.fillStyle=getComputedStyle(theCanvas).backgroundColor;
     context.fillRect(0,0,theCanvas.width,theCanvas.height);
     var w = theCanvas.width/n;
     var h = theCanvas.height/n;
