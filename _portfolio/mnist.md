@@ -136,7 +136,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 for(l=0;l<3;l++){
                     let index = i*280*4 + j*4 + l;
                     if (background_color[l]==data[index]){
-                        val += 1;
+                        val += 255;
                     }
                 }
                 row.push(val/3);
