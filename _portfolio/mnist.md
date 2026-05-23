@@ -149,7 +149,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 let val = 0;
                 for(l=0;l<3;l++){
                     let index = i*280*4 + j*4 + l;
-                    if (backgroundColor[l]==data[index]):
+                    if (background_color[l]==data[index]):
                         val += 1;
                 }
                 row.push(val/3);
