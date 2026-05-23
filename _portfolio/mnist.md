@@ -79,7 +79,9 @@ You can test the model by writting a digit in the squarebox and pressing the but
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.fillStyle=getComputedStyle(canvas).backgroundColor;
         ctx.fillRect(0,0,canvas.width,canvas.height);
-        layout["title"] = "Prediction: ?";
+        layout["title"] = {
+            "text":"Prediction: ?"
+            };
         Plotly.newPlot(chartDiv, [{
             x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
             y: [1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100],
@@ -185,7 +187,9 @@ You can test the model by writting a digit in the squarebox and pressing the but
         model.then((res)=>{
             let prediction = softMax(res.predict(number).dataSync());
             let digit = prediction.indexOf(Math.max(...prediction));
-            layout["title"] = "Prediction: " + digit;
+            layout["title"] = {
+                "text":"Prediction:" + digit,
+            };
             Plotly.newPlot(chartDiv, [{
                 type:"bar",
                 x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
