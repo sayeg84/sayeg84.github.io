@@ -135,9 +135,12 @@ You can test the model by writting a digit in the squarebox and pressing the but
         const r = parseInt(hex.slice(0, 2), 16);
         const g = parseInt(hex.slice(2, 4), 16);
         const b = parseInt(hex.slice(4, 6), 16);
-        return hasAlpha
-        ? { r, g, b, a: parseInt(hex.slice(6, 8), 16) / 255 }
-        : { r, g, b };
+        if (hasAlpha){
+            return { r, g, b, a: parseInt(hex.slice(6, 8), 16) / 255 };
+        }
+        else{
+            return { r, g, b };
+        }
     }
     function processImageData(data){
         let background_color=hexToRgb(getComputedStyle(canvas).backgroundColor);
