@@ -42,9 +42,11 @@ You can test the model by writting a digit in the squarebox and pressing the but
         document.addEventListener('touchend', stopPainting);
         document.addEventListener('mousemove', draw);
         document.addEventListener('touchmove', draw);
-        ctx.fillStyle="#FFFFFF";
+        ctx.fillStyle=getComputedStyle(canvas).backgroundColor;
         ctx.fillRect(0,0,canvas.width,canvas.height);
-        layout = {title: "Prediction: ?",
+        layout = {title: {
+            "text":"Prediction: ?"
+            },
                 xaxis:{title:"Digit",
                     tickmode:"array",
                     tickvals:[0,1,2,3,4,5,6,7,8,9],
