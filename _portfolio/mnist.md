@@ -127,7 +127,6 @@ You can test the model by writting a digit in the squarebox and pressing the but
         if (![3, 4, 6, 8].includes(hex.length)) {
             throw new Error('Invalid hex color: ' + hex);
         }
-        // Expand short forms (#RGB, #RGBA) to full forms
         if (hex.length === 3 || hex.length === 4) {
             hex = [...hex].map(ch => ch + ch).join('');
         }
