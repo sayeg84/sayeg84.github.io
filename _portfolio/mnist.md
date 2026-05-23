@@ -122,7 +122,26 @@ You can test the model by writting a digit in the squarebox and pressing the but
         ctx.lineTo(coord.x, coord.y);
         ctx.stroke();
     }
+    function hexToRgb(hex) {
+        hex = String(hex).trim().replace(/^#/, '');
+        if (![3, 4, 6, 8].includes(hex.length)) {
+            throw new Error('Invalid hex color: ' + hex);
+        }
+        // Expand short forms (#RGB, #RGBA) to full forms
+        if (hex.length === 3 || hex.length === 4) {
+            hex = [...hex].map(ch => ch + ch).join('');
+        }
+        const hasAlpha = hex.length === 8;
+        const r = parseInt(hex.slice(0, 2), 16);
+        const g = parseInt(hex.slice(2, 4), 16);
+        const b = parseInt(hex.slice(4, 6), 16);
+        return hasAlpha
+        ? { r, g, b, a: parseInt(hex.slice(6, 8), 16) / 255 }
+        : { r, g, b };
+    }
     function processImageData(data){
+        let background_color=hexToRgb(getComputedStyle(canvas).backgroundColor);
+        let writting_color=getComputedStyle(document.body).color;
         let arr = [];
         for(i=0;i<280;i++){
             let row = [];
@@ -130,7 +149,8 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 let val = 0;
                 for(l=0;l<3;l++){
                     let index = i*280*4 + j*4 + l;
-                    val += (255 - data[index]);
+                    if (backgroundColor[l]==data[index]):
+                        val += 1;
                 }
                 row.push(val/3);
             }
@@ -151,6 +171,11 @@ You can test the model by writting a digit in the squarebox and pressing the but
             }
         }
         return arr2;
+    }
+    function getData(){
+        let data = ctx.getImageData(0,0,280,280).data;
+        let number = processImageData(data);
+        return number;
     }
     function softMax(arr){
         let suma = 0;
@@ -174,11 +199,6 @@ You can test the model by writting a digit in the squarebox and pressing the but
             vals[i] = arr[i]-Math.log(suma);
         }
         return vals;
-    }
-    function getData(){
-        let data = ctx.getImageData(0,0,280,280).data;
-        let number = processImageData(data);
-        return number;
     }
     function predictValues(){
         let number = getData();
