@@ -10,7 +10,7 @@ For my bachelors thesis, I created a Lattice Gas model (equivalent to an Ising m
 H(\sigma) = -\mu \sum_{i} \sigma_i - J \sum_{\langle i,j \rangle} \sigma_i \sigma_j  + C \sum_{\langle i,j \rangle \in L} \sigma_i \sigma_j  
 \end{equation}
 
-With \(L\) the set of all the edges in cycles over the graph associated to the system. This modification integrated the rigidity of the molecular network into the hamiltonian. For certain values of \(C\), the system dended towards configurations where all cycles where avoided, similar to a maximum spanning tree.
+With \\(L\\) the set of all the edges in cycles over the graph associated to the system. This modification integrated the rigidity of the molecular network into the hamiltonian. For certain values of \\(C\\), the system dended towards configurations where all cycles where avoided, similar to a maximum spanning tree.
 
 <iframe
   src="{{ '/assets/simulations/mod_ising.html' | relative_url }}"
