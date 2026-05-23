@@ -112,7 +112,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
         ctx.beginPath();
         ctx.lineWidth=20;
         ctx.lineCap = "round";
-        ctx.strokeStyle = getComputedStyle(canvas).color;
+        ctx.strokeStyle = getComputedStyle(document.body).color;
         ctx.moveTo(coord.x, coord.y);
         getPosition(event);
         ctx.lineTo(coord.x, coord.y);
