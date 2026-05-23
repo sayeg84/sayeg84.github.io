@@ -10,7 +10,7 @@ A classical problem in Machine Learning is the accurate classification of [MNIST
 You can test the model by writting a digit in the squarebox and pressing the buttons.
 
 <iframe
-  src="{{ '/assets/simulations/neuro.html' | relative_url }}"
+  src="{{ '/assets/simulations/mnist.html' | relative_url }}"
   style="width:100%; height:750px; border:0;"
   loading="lazy">
 </iframe>
