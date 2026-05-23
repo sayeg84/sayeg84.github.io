@@ -127,7 +127,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
     }
     function processImageData(data){
         let background_color=parseRGBA(getComputedStyle(canvas).backgroundColor);
-        let writting_color=getComputedStyle(document.body).color;
+        let writting_color=parseRGBA(getComputedStyle(document.body).color);
         let arr = [];
         for(i=0;i<280;i++){
             let row = [];
@@ -135,7 +135,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 let val = 0;
                 for(l=0;l<3;l++){
                     let index = i*280*4 + j*4 + l;
-                    if (background_color[l]==data[index]){
+                    if (writting_color[l]==data[index]){
                         val += 255;
                     }
                 }
