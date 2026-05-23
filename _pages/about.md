@@ -8,7 +8,6 @@ redirect_from:
 ---
 
 
-<html lang="en">
 <head>
   <style>
       /* containers */
@@ -60,7 +59,7 @@ redirect_from:
     </div>
   </div>
 
-<script >
+<script>
 var tempReadout = document.getElementById("tempReadout");
 var BReadout = document.getElementById("BReadout");
 var JReadout = document.getElementById("JReadout");
