@@ -33,6 +33,14 @@ With \\(L\\) the set of all the edges in cycles over the graph associated to the
           text-align: center;
       }
   </style>
+  <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\\)']]
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 </head>
 <meta charset="utf-8">
   <div class="row">
@@ -45,19 +53,19 @@ With \\(L\\) the set of all the edges in cycles over the graph associated to the
         <div style="display: inline-block">
             MC step = <span id="tReadout"> 0   </span>  
             <br>
-            \(kT\\)  = <span id="tempReadout"> 0.5   </span> 
+            \(kT\)  = <span id="tempReadout"> 0.5   </span> 
             <br>
             <input type="range" min="0.01" max="5" value="0.5" step="0.01" id="tempSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
-            \\(\mu\\)  = <span id="BReadout"> -1.5   </span> 
+            \(\mu\)  = <span id="BReadout"> -1.5   </span> 
             <br>
             <input type="range" min="-3.5" max="0" value="-1.5" step="0.01" id="BSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
-            \\(J\\) = <span id="JReadout"> 2   </span> 
+            \(J\) = <span id="JReadout"> 2   </span> 
             <br>
             <input type="range" min="0" max="3" value="2" step="0.01" id="JSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
-            \\(C\\) = <span id="CReadout"> 0.9   </span> 
+            \(C\) = <span id="CReadout"> 0.9   </span> 
             <br>
             <input type="range" min="0" max="1" value="0.9" step="0.01" id="CSlider" oninput="showAndUpdate();" onchange="showAndUpdate();" class = "slider">
             <br>
