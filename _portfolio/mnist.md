@@ -141,6 +141,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
     }
     function processImageData(data){
         let background_color=hexToRgb(getComputedStyle(canvas).backgroundColor);
+        console.log(background_color)
         let writting_color=getComputedStyle(document.body).color;
         let arr = [];
         for(i=0;i<280;i++){
