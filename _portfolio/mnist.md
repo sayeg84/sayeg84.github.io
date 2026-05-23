@@ -122,27 +122,11 @@ You can test the model by writting a digit in the squarebox and pressing the but
         ctx.lineTo(coord.x, coord.y);
         ctx.stroke();
     }
-    function hexToRgb(hex) {
-        hex = String(hex).trim().replace(/^#/, '');
-        if (![3, 4, 6, 8].includes(hex.length)) {
-            throw new Error('Invalid hex color: ' + hex);
-        }
-        if (hex.length === 3 || hex.length === 4) {
-            hex = [...hex].map(ch => ch + ch).join('');
-        }
-        const hasAlpha = hex.length === 8;
-        const r = parseInt(hex.slice(0, 2), 16);
-        const g = parseInt(hex.slice(2, 4), 16);
-        const b = parseInt(hex.slice(4, 6), 16);
-        if (hasAlpha){
-            return { r, g, b, a: parseInt(hex.slice(6, 8), 16) / 255 };
-        }
-        else{
-            return { r, g, b };
-        }
+    function parseRGBA(rgba) {
+        return rgba.match(/[\d.]+/g).map(Number);
     }
     function processImageData(data){
-        let background_color=hexToRgb(getComputedStyle(canvas).backgroundColor);
+        let background_color=parseRGBA(getComputedStyle(canvas).backgroundColor);
         let writting_color=getComputedStyle(document.body).color;
         let arr = [];
         for(i=0;i<280;i++){
