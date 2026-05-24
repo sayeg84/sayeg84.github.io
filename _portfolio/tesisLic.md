@@ -36,7 +36,7 @@ With \\(L\\) the set of all the edges in cycles over the graph associated to the
   <script>
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\\)']]
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
   }
 };
 </script>
