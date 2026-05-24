@@ -1,0 +1,155 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+
+<div id="plot" style="width:900px;height:600px;"></div>
+
+<script>
+function loadText(url, cb) {
+  fetch(url, { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status + " loading " + url);
+      return r.text();
+    })
+    .then(function (txt) { cb(null, txt); })
+    .catch(function (e) { cb(e); });
+}
+
+function parseMatrix(csvText) {
+  var parsed = Papa.parse(csvText, {
+    header: false,
+    dynamicTyping: true,
+    skipEmptyLines: true
+  });
+  return parsed.data; // frames x N
+}
+
+function validateSameShape(X, Y, Z) {
+  var nFrames = X.length;
+  if (nFrames === 0) throw new Error("Empty X file");
+  if (Y.length !== nFrames || Z.length !== nFrames) throw new Error("X/Y/Z row counts differ");
+
+  var nPoints = X[0].length;
+  for (var i = 0; i < nFrames; i++) {
+    if (X[i].length !== nPoints || Y[i].length !== nPoints || Z[i].length !== nPoints) {
+      throw new Error("Column count mismatch on row " + i);
+    }
+  }
+  return { nFrames: nFrames, nPoints: nPoints };
+}
+
+function buildFrames(X, Y, Z) {
+  validateSameShape(X, Y, Z);
+  var frames = [];
+  for (var f = 0; f < X.length; f++) {
+    frames.push({
+      name: String(f),
+      data: [{
+        type: "scatter3d",
+        mode: "lines",
+        x: X[f], y: Y[f], z: Z[f],
+        line: {width:4}
+      }]
+    });
+  }
+  return frames;
+}
+
+
+function render(divId, frames, frameDurationMs) {
+  // Ensure frame names are 0..N-1 as strings
+  frames.forEach((fr, i) => { fr.name = String(i); });
+
+  const initTrace = frames[0].data[0];
+
+  const sliderSteps = frames.map((fr, i) => ({
+    label: String(i),              // you can change to time labels if you want
+    method: "animate",
+    args: [[fr.name], {
+      mode: "immediate",
+      frame: { duration: 0, redraw: true },
+      transition: { duration: 0 }
+    }]
+  }));
+
+  const layout = {
+    scene: {
+        aspectmode: "cube",
+        xaxis: { title: "x", autorange: false, range: [-50, 50], tickfont: { family: 'Arial, sans-serif' } },
+        yaxis: { title: "y", autorange: false, range: [-50, 50], tickfont: { family: 'Arial, sans-serif' } },
+        zaxis: { title: "z", autorange: false, range: [-50, 50], tickfont: { family: 'Arial, sans-serif' } },
+    },
+    margin: { l: 0, r: 0, t: 0, b: 0 },
+
+    // Slider "over" the animation: positioned above the buttons area
+    sliders: [{
+      active: 0,
+      x: 0.08,
+      len: 0.9,
+      y: 0.02,                 // push it above the bottom edge
+      xanchor: "left",
+      yanchor: "bottom",
+      pad: { t: 0, b: 0 },
+      currentvalue: { prefix: "Frame: " },
+      steps: sliderSteps
+    }],
+
+    updatemenus: [{
+      type: "buttons",
+      direction: "left",
+      x: 0.08,
+      y: 0,                    // below the slider
+      xanchor: "left",
+      yanchor: "bottom",
+      pad: { t: 35, r: 10 },    // leaves room for the slider above
+      showactive: false,
+      buttons: [{
+        label: "Play",
+        method: "animate",
+        args: [null, {
+          fromcurrent: true,
+          mode: "immediate",
+          frame: { duration: frameDurationMs, redraw: true },
+          transition: { duration: 0 }
+        }]
+      }, {
+        label: "Pause",
+        method: "animate",
+        args: [[null], {
+          mode: "immediate",
+          frame: { duration: 0, redraw: false },
+          transition: { duration: 0 }
+        }]
+      }]
+    }]
+  };
+
+  Plotly.newPlot(divId, [initTrace], layout).then(function () {
+    Plotly.addFrames(divId, frames);
+  });
+}
+
+// --- Load all three (from your website) ---
+var xUrl = "./finalPolyEightVeryReduced_x.csv";
+var yUrl = "./finalPolyEightVeryReduced_y.csv";
+var zUrl = "./finalPolyEightVeryReduced_z.csv";
+
+loadText(xUrl, function (ex, xText) {
+  if (ex) return console.error(ex);
+
+  loadText(yUrl, function (ey, yText) {
+    if (ey) return console.error(ey);
+
+    loadText(zUrl, function (ez, zText) {
+      if (ez) return console.error(ez);
+
+      var X = parseMatrix(xText);
+      var Y = parseMatrix(yText);
+      var Z = parseMatrix(zText);
+
+      var frames = buildFrames(X, Y, Z);
+      render("plot", frames, 50);
+    });
+  });
+});
+</script>

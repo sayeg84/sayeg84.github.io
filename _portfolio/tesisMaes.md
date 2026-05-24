@@ -7,7 +7,7 @@ collection: portfolio
 
 
 <iframe
-  src="{{ '/assets/simulations/test.html' | relative_url }}"
+  src="{{ '/assets/simulations/plot_curve.html' | relative_url }}"
   style="width:100%; height:750px; border:0;"
   loading="lazy">
 </iframe>
