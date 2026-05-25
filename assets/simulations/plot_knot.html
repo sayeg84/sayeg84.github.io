@@ -3,11 +3,14 @@
 <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
 <script src="/assets/simulations/plot.js"></script>
 <div id="plot" style="width:800px;height:600px;"></div>
+
 <script>
+
+
 // --- Load all three (from your website) ---
-var xUrl = "./data/finalPolyEightVeryReduced_x.csv";
-var yUrl = "./data/finalPolyEightVeryReduced_y.csv";
-var zUrl = "./data/finalPolyEightVeryReduced_z.csv";
+var xUrl = "./data/needleTrajReduced_x.csv";
+var yUrl = "./data/needleTrajReduced_y.csv";
+var zUrl = "./data/needleTrajReduced_z.csv";
 
 loadText(xUrl, function (ex, xText) {
   if (ex) return console.error(ex);

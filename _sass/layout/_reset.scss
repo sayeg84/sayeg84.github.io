@@ -34,6 +34,12 @@ body { margin: 0; }
   background: #000;
 }
 
+/* Dark */
+html.dark ::selection {
+  background: #fff;
+  color: #fff;
+}
+
 /* Display HTML5 elements in IE6-9 and FF3 */
 
 article,

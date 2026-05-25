@@ -10,7 +10,7 @@ A classical problem in Machine Learning is the accurate classification of [MNIST
 You can test the model by writting a digit in the squarebox and pressing the buttons.
 
 <div style="float:left;text-align: center;">
-<canvas id="canvas" width=280 height=280 style="border:1px solid #000000;">
+<canvas id="canvas" width=280 height=280 style="border:1px solid currentColor;">
 </canvas>
 <br>
 <br>  
@@ -35,6 +35,12 @@ You can test the model by writting a digit in the squarebox and pressing the but
     let predTest = [];
     let coord = { x: 0, y: 0 };
     let paint = false;
+    function handleThemeChange() {
+        const currentTheme = localStorage.getItem("theme") || 
+                            document.querySelector('html').getAttribute('data-theme') || 
+                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyThemeStyles(currentTheme);
+    }
     window.addEventListener('load', ()=>{     
         document.addEventListener('mousedown', startPainting);
         document.addEventListener('touchstart', startPaintingTouch);
@@ -47,25 +53,28 @@ You can test the model by writting a digit in the squarebox and pressing the but
         layout = {title: {
             "text":"Prediction: ?"
             },
-                xaxis:{title:"Digit",
-                    tickmode:"array",
-                    tickvals:[0,1,2,3,4,5,6,7,8,9],
-                    ticktext:["0","1","2","3","4","5","6","7","8","9"]
+            xaxis:{title:"Digit",
+                tickmode:"array",
+                tickvals:[0,1,2,3,4,5,6,7,8,9],
+                ticktext:["0","1","2","3","4","5","6","7","8","9"]
             },
-                yaxis:{title:"Log Probability",
-                    type:"log",
-                    tickvals:[1e-100,1e-80,1e-60,1e-40,1e-20,1],
-                    ticktext:["-100","-80","-60","-40","-20","0"],
-                    range:[-100,0]
+            yaxis:{title:"Log Probability",
+                type:"log",
+                tickvals:[1e-100,1e-80,1e-60,1e-40,1e-20,1],
+                ticktext:["-100","-80","-60","-40","-20","0"],
+                range:[-100,0]
             },
-                height:320,
-                width: 450,
-                marign:{
-                    l:0,
-                    r:0,
-                    t:-5,
-                    b:0
-                }
+            paper_bgcolor: getComputedStyle(document.body).backgroundColor,
+            plot_bgcolor: getComputedStyle(document.body).backgroundColor,
+            font: { color: getComputedStyle(document.body).color },
+            height:320,
+            width: 450,
+            marign:{
+                l:0,
+                r:0,
+                t:-5,
+                b:0
+            }
             };
         Plotly.newPlot(chartDiv, [{
             x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -74,7 +83,18 @@ You can test the model by writting a digit in the squarebox and pressing the but
             }], 
             layout
         );
+        document.addEventListener('readtystatechange', function(e) {
+            console.log("change");
+        });
     });
+    function handleThemeChange(){
+        layout["paper_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+        layout["plot_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+        layout["font"]={ color: getComputedStyle(document.body).color };
+        Plotly.relayout(chartDiv,
+            layout
+        );
+    }
     function resetCanvas(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.fillStyle=getComputedStyle(canvas).backgroundColor;
@@ -82,7 +102,10 @@ You can test the model by writting a digit in the squarebox and pressing the but
         layout["title"] = {
             "text":"Prediction: ?"
             };
-        Plotly.newPlot(chartDiv, [{
+        layout["paper_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+        layout["plot_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+        layout["font"]={ color: getComputedStyle(document.body).color };
+        Plotly.react(chartDiv, [{
             x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
             y: [1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100, 1e-100],
             type:"bar" 
@@ -197,7 +220,10 @@ You can test the model by writting a digit in the squarebox and pressing the but
             layout["title"] = {
                 "text":"Prediction:" + digit,
             };
-            Plotly.newPlot(chartDiv, [{
+            layout["paper_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+            layout["plot_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+            layout["font"]={ color: getComputedStyle(document.body).color };
+            Plotly.react(chartDiv, [{
                 type:"bar",
                 x: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
                 y: prediction,
@@ -205,5 +231,6 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 layout
             );
         });
+        console.log("predicted");
     }
 </script>
