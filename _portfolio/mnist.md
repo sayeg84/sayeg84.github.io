@@ -35,13 +35,7 @@ You can test the model by writting a digit in the squarebox and pressing the but
     let predTest = [];
     let coord = { x: 0, y: 0 };
     let paint = false;
-    function handleThemeChange() {
-        const currentTheme = localStorage.getItem("theme") || 
-                            document.querySelector('html').getAttribute('data-theme') || 
-                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        applyThemeStyles(currentTheme);
-    }
-    window.addEventListener('load', ()=>{     
+    window.addEventListener('load', ()=>{
         document.addEventListener('mousedown', startPainting);
         document.addEventListener('touchstart', startPaintingTouch);
         document.addEventListener('mouseup', stopPainting);
@@ -64,7 +58,6 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 ticktext:["-100","-80","-60","-40","-20","0"],
                 range:[-100,0]
             },
-            paper_bgcolor: getComputedStyle(document.body).backgroundColor,
             plot_bgcolor: getComputedStyle(document.body).backgroundColor,
             font: { color: getComputedStyle(document.body).color },
             height:320,
@@ -83,18 +76,27 @@ You can test the model by writting a digit in the squarebox and pressing the but
             }], 
             layout
         );
-        document.addEventListener('readtystatechange', function(e) {
-            console.log("change");
+        let count=0;
+        const html = document.documentElement;
+        let prev = html.getAttribute("data-theme");
+        const obs = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+            if (m.type !== "attributes" || m.attributeName !== "data-theme") continue;
+            const next = html.getAttribute("data-theme"); 
+            if ((prev === null && next === "dark") || (prev === "dark" && next === null)){
+                layout["paper_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+                layout["plot_bgcolor"]=getComputedStyle(document.body).backgroundColor;
+                layout["font"]={ color: getComputedStyle(document.body).color };
+                Plotly.relayout(chartDiv,layout);
+            }
+            prev = next;
+        }
         });
+        obs.observe(html, { attributes: true, attributeFilter: ["data-theme"] });
+        if (prev === null && html.getAttribute("data-theme") === "dark") {
+            console.log("html data-theme is already dark after load");
+        };
     });
-    function handleThemeChange(){
-        layout["paper_bgcolor"]=getComputedStyle(document.body).backgroundColor;
-        layout["plot_bgcolor"]=getComputedStyle(document.body).backgroundColor;
-        layout["font"]={ color: getComputedStyle(document.body).color };
-        Plotly.relayout(chartDiv,
-            layout
-        );
-    }
     function resetCanvas(){
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.fillStyle=getComputedStyle(canvas).backgroundColor;
@@ -231,6 +233,5 @@ You can test the model by writting a digit in the squarebox and pressing the but
                 layout
             );
         });
-        console.log("predicted");
     }
 </script>

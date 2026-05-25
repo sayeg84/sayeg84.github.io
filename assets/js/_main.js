@@ -42,6 +42,10 @@ var toggleTheme = () => {
   const new_theme = current_theme === "dark" ? "light" : "dark";
   localStorage.setItem("theme", new_theme);
   setTheme(new_theme);
+    // Dispatch a custom event that other pages can listen to
+  window.dispatchEvent(new CustomEvent('themeChanged', { 
+    detail: { theme: new_theme } 
+  }));
 };
 
 /* ==========================================================================

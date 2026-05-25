@@ -67,13 +67,13 @@ function buildFrames(X, Y, Z) {
         mode: "lines+markers",
         x: X[f], y: Y[f], z: Z[f],
           line: {
-            color: getComputedStyle(window.parent.document.body).color,
-            width: 5
+            color: 'rgb(0, 179, 184)', 
+            width: 7
           },
 
           marker: {
             //color: 'rgb(184, 14, 167)',  // marker color (Crimson)
-            color: 'rgb(14, 184, 153)',  // marker color (Crimson)
+            color: 'rgb(226, 74, 141)',  // marker color (Crimson)
             size: 4,
             symbol: 'circle',
             opacity: 0.9
@@ -83,7 +83,6 @@ function buildFrames(X, Y, Z) {
   }
   return frames;
 }
-
 function render(divId, frames, frameDurationMs) {
   // Calculate dynamic ranges based on actual data
   const initTrace = frames[0].data[0];
@@ -163,9 +162,6 @@ function render(divId, frames, frameDurationMs) {
   // const finalXRangeSymmetric = (finalXRange[0] <= 0 && finalXRange[1] >= 0) ? ensureSymmetric(finalXRange) : finalXRange;
   // const finalYRangeSymmetric = (finalYRange[0] <= 0 && finalYRange[1] >= 0) ? ensureSymmetric(finalYRange) : finalYRange;
   // const finalZRangeSymmetric = (finalZRange[0] <= 0 && finalZRange[1] >= 0) ? ensureSymmetric(finalZRange) : finalZRange;
-  console.log(finalXRange);
-  console.log(finalYRange);
-  console.log(finalZRange);
   // Use the calculated ranges
   const layout = {
     scene: {
@@ -240,8 +236,32 @@ function render(divId, frames, frameDurationMs) {
       }]
     }]
   };
-
-  Plotly.newPlot(divId, [initTrace], layout).then(function () {
+  let html = window.parent.document.documentElement;
+  let prev = html.getAttribute("data-theme");
+  let obs = new MutationObserver((mutations) => {
+  for (let m of mutations) {
+      if (m.type !== "attributes" || m.attributeName !== "data-theme") continue;
+      let next = html.getAttribute("data-theme"); 
+      let isChanged = (prev === null && next === "dark") || (prev === "dark" && next === null);
+      if (isChanged){
+        const parentBody = window.parent.document.body;
+        const bg = getComputedStyle(parentBody).backgroundColor;
+        const fg = getComputedStyle(parentBody).color;
+        Plotly.relayout(divId, {
+          paper_bgcolor: bg,
+          plot_bgcolor: bg,
+          "font.color": fg,
+          "scene.bgcolor": bg,  
+        });
+      }
+      prev = next;
+    }
+  });
+  obs.observe(html, { attributes: true, attributeFilter: ["data-theme"] });
+  if (prev === null && html.getAttribute("data-theme") === "dark") {
+      console.log("html data-theme is already dark after load");
+  };
+  Plotly.react(divId, [initTrace], layout).then(function () {
     Plotly.addFrames(divId, frames);
   });
 }
