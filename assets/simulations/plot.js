@@ -59,7 +59,10 @@ function calculatePadding(minVal, maxVal, paddingFactor = 0.1) {
 function buildFrames(X, Y, Z) {
   validateSameShape(X, Y, Z);
   var frames = [];
-  for (var f = 0; f < X.length; f++) {
+  // Reduce number of frames for better performance if needed
+  const step = Math.ceil(X.length / 100); // Limit to 100 frames maximum
+  
+  for (var f = 0; f < X.length; f += step) {
     frames.push({
       name: String(f),
       data: [{
@@ -72,8 +75,7 @@ function buildFrames(X, Y, Z) {
           },
 
           marker: {
-            //color: 'rgb(184, 14, 167)',  // marker color (Crimson)
-            color: 'rgb(226, 74, 141)',  // marker color (Crimson)
+            color: 'rgb(226, 74, 141)',
             size: 4,
             symbol: 'circle',
             opacity: 0.9
@@ -83,12 +85,13 @@ function buildFrames(X, Y, Z) {
   }
   return frames;
 }
+
 function render(divId, frames, frameDurationMs) {
   // Calculate dynamic ranges based on actual data
   const initTrace = frames[0].data[0];
 
   const sliderSteps = frames.map((fr, i) => ({
-    label: String(i),              // you can change to time labels if you want
+    label: String(i),              
     method: "animate",
     args: [[fr.name], {
       mode: "immediate",
@@ -97,24 +100,28 @@ function render(divId, frames, frameDurationMs) {
     }]
   }));
   
-  
+  // Optimized range calculation
   let allX = [];
   let allY = [];
   let allZ = [];
   
-  // Collect all data points for range calculation
-  frames.forEach(frame => {
+  // Only use a subset of frames for range calculation to improve performance
+  const sampleSize = Math.min(frames.length, 20);
+  const step = Math.ceil(frames.length / sampleSize);
+  
+  for (let i = 0; i < frames.length; i += step) {
+    const frame = frames[i];
     frame.data.forEach(trace => {
       allX = allX.concat(trace.x);
       allY = allY.concat(trace.y);
       allZ = allZ.concat(trace.z);
     });
-  });
+  }
   
   // Find min/max values for each axis
-  const xRange = findMinMax(frames.map(f => f.data[0].x));
-  const yRange = findMinMax(frames.map(f => f.data[0].y));
-  const zRange = findMinMax(frames.map(f => f.data[0].z));
+  const xRange = findMinMax(allX);
+  const yRange = findMinMax(allY);
+  const zRange = findMinMax(allZ);
   
   // Add padding for better visualization (10% padding)
   const xPadding = calculatePadding(xRange.min, xRange.max, 0.1);
@@ -152,17 +159,7 @@ function render(divId, frames, frameDurationMs) {
     finalZRange[1] += 0.5;
   }
 
-  // Ensure ranges are symmetric around zero if they cross zero
-  const ensureSymmetric = (range) => {
-    const maxAbs = Math.max(Math.abs(range[0]), Math.abs(range[1]));
-    return [-maxAbs, maxAbs];
-  };
-
-  // Only make ranges symmetric if they cross zero (optional enhancement)
-  // const finalXRangeSymmetric = (finalXRange[0] <= 0 && finalXRange[1] >= 0) ? ensureSymmetric(finalXRange) : finalXRange;
-  // const finalYRangeSymmetric = (finalYRange[0] <= 0 && finalYRange[1] >= 0) ? ensureSymmetric(finalYRange) : finalYRange;
-  // const finalZRangeSymmetric = (finalZRange[0] <= 0 && finalZRange[1] >= 0) ? ensureSymmetric(finalZRange) : finalZRange;
-  // Use the calculated ranges
+  // Layout configuration
   const layout = {
     scene: {
       aspectmode: "cube",
@@ -184,37 +181,30 @@ function render(divId, frames, frameDurationMs) {
         range: finalZRange,
         tickfont: { family: 'Arial, sans-serif' }
       },
-      // Force dark 3D scene styling
       bgcolor: getComputedStyle(window.parent.document.body).backgroundColor,
     },
-
-    // Also helps around the plot (outside the 3D cube)
     paper_bgcolor: getComputedStyle(window.parent.document.body).backgroundColor,
     font: { color: getComputedStyle(window.parent.document.body).color },
-
-  margin: { l: 0, r: 0, t: 0, b: 0 },
-
-    // Slider "over" the animation: positioned above the buttons area
+    margin: { l: 0, r: 0, t: 0, b: 0 },
     sliders: [{
       active: 0,
       x: 0.08,
       len: 0.9,
-      y: -0.2,                 // push it above the bottom edge
+      y: -0.2,
       xanchor: "left",
       yanchor: "bottom",
       pad: { t: 0, b: 10 },
       currentvalue: { prefix: "Frame: " },
       steps: sliderSteps
     }],
-
     updatemenus: [{
       type: "buttons",
       direction: "left",
       x: 0.08,
-      y: 0,                    // below the slider
+      y: 0,
       xanchor: "left",
       yanchor: "bottom",
-      pad: { t: 35, r: 10 },    // leaves room for the slider above
+      pad: { t: 35, r: 10 },
       showactive: false,
       buttons: [{
         label: "Play",
@@ -236,10 +226,12 @@ function render(divId, frames, frameDurationMs) {
       }]
     }]
   };
+  
+  // Theme observer optimization
   let html = window.parent.document.documentElement;
   let prev = html.getAttribute("data-theme");
   let obs = new MutationObserver((mutations) => {
-  for (let m of mutations) {
+    for (let m of mutations) {
       if (m.type !== "attributes" || m.attributeName !== "data-theme") continue;
       let next = html.getAttribute("data-theme"); 
       let isChanged = (prev === null && next === "dark") || (prev === "dark" && next === null);
@@ -258,10 +250,9 @@ function render(divId, frames, frameDurationMs) {
     }
   });
   obs.observe(html, { attributes: true, attributeFilter: ["data-theme"] });
-  if (prev === null && html.getAttribute("data-theme") === "dark") {
-      console.log("html data-theme is already dark after load");
-  };
-  Plotly.react(divId, [initTrace], layout).then(function () {
+  
+  // Render with optimizations
+  Plotly.newPlot(divId, [initTrace], layout).then(function () {
     Plotly.addFrames(divId, frames);
   });
 }
