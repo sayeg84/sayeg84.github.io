@@ -39,10 +39,8 @@ function findMinMax(values) {
   for (let i = 0; i < values.length; i++) {
     for (let j = 0; j < values[i].length; j++) {
       const val = values[i][j];
-      if (typeof val === 'number' && !isNaN(val)) {
-        min = Math.min(min, val);
-        max = Math.max(max, val);
-      }
+      if (v < min) min = val;
+      if (v > max) max = val;
     }
   }
   
@@ -60,7 +58,7 @@ function buildFrames(X, Y, Z) {
   validateSameShape(X, Y, Z);
   var frames = [];
   // Reduce number of frames for better performance if needed
-  const step = Math.ceil(X.length / 100); // Limit to 100 frames maximum
+  const step = Math.ceil(X.length / 300); // Limit to 100 frames maximum
   
   for (var f = 0; f < X.length; f += step) {
     frames.push({
@@ -106,7 +104,7 @@ function render(divId, frames, frameDurationMs) {
   let allZ = [];
   
   // Only use a subset of frames for range calculation to improve performance
-  const sampleSize = Math.min(frames.length, 20);
+  const sampleSize = Math.min(frames.length, 100);
   const step = Math.ceil(frames.length / sampleSize);
   
   for (let i = 0; i < frames.length; i += step) {
