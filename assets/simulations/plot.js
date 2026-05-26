@@ -39,8 +39,6 @@ function findMinMax(values) {
   for (let i = 0; i < values.length; i++) {
     for (let j = 0; j < values[i].length; j++) {
       const val = values[i][j];
-      //if (val < min) min = val;
-      //if (val > max) max = val;
       if (typeof val === 'number' && !isNaN(val)) {
         min = Math.min(min, val);
         max = Math.max(max, val);
@@ -62,7 +60,7 @@ function buildFrames(X, Y, Z) {
   validateSameShape(X, Y, Z);
   var frames = [];
   // Reduce number of frames for better performance if needed
-  const step = Math.ceil(X.length / 200); // Limit to 100 frames maximum
+  const step = Math.ceil(X.length / 300); // Limit to 100 frames maximum
   //const step=1;
   for (var f = 0; f < X.length; f += step) {
     frames.push({
@@ -102,28 +100,34 @@ function render(divId, frames, frameDurationMs) {
     }]
   }));
   
-  // Optimized range calculation
+  // Optimized range calculation - collect ALL data points for accurate ranges
   let allX = [];
   let allY = [];
   let allZ = [];
   
-  // Only use a subset of frames for range calculation to improve performance
-  const sampleSize = Math.min(frames.length, 1000);
-  const step = Math.ceil(frames.length / sampleSize);
-  
-  for (let i = 0; i < frames.length; i += step) {
+  // Collect all data points from all frames properly
+  for (let i = 0; i < frames.length; i++) {
     const frame = frames[i];
     frame.data.forEach(trace => {
-      allX = allX.concat(trace.x);
-      allY = allY.concat(trace.y);
-      allZ = allZ.concat(trace.z);
+      // Properly flatten the arrays to get all individual values
+      if (Array.isArray(trace.x)) {
+        allX = allX.concat(trace.x);
+      }
+      if (Array.isArray(trace.y)) {
+        allY = allY.concat(trace.y);
+      }
+      if (Array.isArray(trace.z)) {
+        allZ = allZ.concat(trace.z);
+      }
     });
   }
   
-  // Find min/max values for each axis
-  const xRange = findMinMax(allX);
-  const yRange = findMinMax(allY);
-  const zRange = findMinMax(allZ);
+  // Find min/max values for each axis using all data points
+  // Pass arrays of arrays to findMinMax correctly
+  const xRange = findMinMax([allX]);
+  const yRange = findMinMax([allY]);
+  const zRange = findMinMax([allZ]);
+  
   // Add padding for better visualization (10% padding)
   const xPadding = calculatePadding(xRange.min, xRange.max, 0.1);
   const yPadding = calculatePadding(yRange.min, yRange.max, 0.1);
