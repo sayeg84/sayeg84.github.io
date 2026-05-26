@@ -8,7 +8,7 @@ collection: portfolio
 For my master thesis, I worked on a computational geometry problem, about applying optimization methods for untying knotted chains (i.e. segments of lines). 
 <iframe
   src="{{ '/assets/simulations/plot_curve.html' | relative_url }}"
-  style="width:50vw; height:80vh; border:0;"
+  style="width:700px; height:600px; border:0;"
   loading="lazy">
 </iframe>
 
@@ -16,7 +16,7 @@ While continuous optimization methods could be applied without problem to large,
 
 <iframe
   src="{{ '/assets/simulations/plot_knot.html' | relative_url }}"
-  style="width:50vw; height:80vh; border:0;"
+  style="width:700px; height:600px; border:0;"
   loading="lazy">
 </iframe>  
 
