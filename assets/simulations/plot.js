@@ -124,9 +124,6 @@ function render(divId, frames, frameDurationMs) {
   const xRange = findMinMax(allX);
   const yRange = findMinMax(allY);
   const zRange = findMinMax(allZ);
-  console.log(xRange);
-  console.log(yRange);
-  console.log(zRange);
   // Add padding for better visualization (10% padding)
   const xPadding = calculatePadding(xRange.min, xRange.max, 0.1);
   const yPadding = calculatePadding(yRange.min, yRange.max, 0.1);
