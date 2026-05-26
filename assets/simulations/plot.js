@@ -58,8 +58,8 @@ function buildFrames(X, Y, Z) {
   validateSameShape(X, Y, Z);
   var frames = [];
   // Reduce number of frames for better performance if needed
-  //const step = Math.ceil(X.length / 300); // Limit to 100 frames maximum
-  const step=1;
+  const step = Math.ceil(X.length / 200); // Limit to 100 frames maximum
+  //const step=1;
   for (var f = 0; f < X.length; f += step) {
     frames.push({
       name: String(f),
@@ -104,7 +104,7 @@ function render(divId, frames, frameDurationMs) {
   let allZ = [];
   
   // Only use a subset of frames for range calculation to improve performance
-  const sampleSize = Math.min(frames.length, 200);
+  const sampleSize = Math.min(frames.length, 20);
   const step = Math.ceil(frames.length / sampleSize);
   
   for (let i = 0; i < frames.length; i += step) {

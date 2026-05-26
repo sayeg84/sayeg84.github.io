@@ -22,7 +22,7 @@ Promise.all([
   var Z = parseMatrix(zText);
 
   var frames = buildFrames(X, Y, Z);
-  render("plot", frames, 20);
+  render("plot", frames, 40);
 })
 .catch(function(error) {
   console.error("Error loading data:", error);
