@@ -39,8 +39,8 @@ function findMinMax(values) {
   for (let i = 0; i < values.length; i++) {
     for (let j = 0; j < values[i].length; j++) {
       const val = values[i][j];
-      if (v < min) min = val;
-      if (v > max) max = val;
+      if (val < min) min = val;
+      if (val > max) max = val;
     }
   }
   
