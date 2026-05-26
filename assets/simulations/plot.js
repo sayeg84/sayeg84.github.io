@@ -39,8 +39,12 @@ function findMinMax(values) {
   for (let i = 0; i < values.length; i++) {
     for (let j = 0; j < values[i].length; j++) {
       const val = values[i][j];
-      if (val < min) min = val;
-      if (val > max) max = val;
+      //if (val < min) min = val;
+      //if (val > max) max = val;
+      if (typeof val === 'number' && !isNaN(val)) {
+        min = Math.min(min, val);
+        max = Math.max(max, val);
+      }
     }
   }
   
@@ -120,7 +124,9 @@ function render(divId, frames, frameDurationMs) {
   const xRange = findMinMax(allX);
   const yRange = findMinMax(allY);
   const zRange = findMinMax(allZ);
-  
+  console.log(xRange);
+  console.log(yRange);
+  console.log(zRange);
   // Add padding for better visualization (10% padding)
   const xPadding = calculatePadding(xRange.min, xRange.max, 0.1);
   const yPadding = calculatePadding(yRange.min, yRange.max, 0.1);
