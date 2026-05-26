@@ -108,7 +108,7 @@ function render(divId, frames, frameDurationMs) {
   let allZ = [];
   
   // Only use a subset of frames for range calculation to improve performance
-  const sampleSize = Math.min(frames.length, 20);
+  const sampleSize = Math.min(frames.length, 1000);
   const step = Math.ceil(frames.length / sampleSize);
   
   for (let i = 0; i < frames.length; i += step) {
