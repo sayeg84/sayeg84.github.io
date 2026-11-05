@@ -26,7 +26,7 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #15181c;
+  --bg: #050607;
   --surface: #1f2328;
   --text: #e3e6ea;
   --muted: #9aa3ad;
@@ -36,7 +36,7 @@
   --plot-grid: #2c3238;
 
   --sim-ising-up: #b39ad0;
-  --sim-ising-down: #2b2f25;
+  --sim-ising-down: #787957;
   --sim-rigid: #8cc0f0;
   --sim-flexible: #4fbf93;
 }

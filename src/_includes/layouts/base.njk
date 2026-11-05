@@ -6,9 +6,7 @@
   <title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ excerpt or site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/images/favicon-32x32.png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png">
+  <link rel="icon" href="data:,">{# no favicon; also stops the browser requesting /favicon.ico #}
   {# Set the theme before first paint so there is no light/dark flash. #}
   <script>
     (function () {
