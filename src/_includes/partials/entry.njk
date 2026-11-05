@@ -1,0 +1,12 @@
+{#
+  One row in a list of entries. Expects `item` (a collection item).
+  Optional flags set by the including page:
+    external – link the title to `paperurl` when present
+    showYear – show the year when the item has no `period`
+#}
+{% set meta = [item.data.subtitle, item.data.venue, item.data.period or ((item.date | year) if showYear)] | select | join(" · ") %}
+<li>
+  <a class="entry-title" href="{{ item.data.paperurl if external and item.data.paperurl else item.url }}">{{ item.data.title }}</a>
+  {% if meta %}<p class="meta">{{ meta }}</p>{% endif %}
+  {% if item.data.excerpt %}<p>{{ item.data.excerpt }}</p>{% endif %}
+</li>

@@ -1,0 +1,7 @@
+[
+  { "from": "/about/", "to": "/" },
+  { "from": "/about.html", "to": "/" },
+  { "from": "/resume/", "to": "/cv/" },
+  { "from": "/blog-base/", "to": "/blog/" },
+  { "from": "/wordpress/blog-posts/", "to": "/blog/" }
+]

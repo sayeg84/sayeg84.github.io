@@ -1,0 +1,12 @@
+---
+# Generates one tiny redirect page per entry in _data/redirects.json (old URLs).
+pagination:
+  data: redirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from if redirect.from.endsWith('.html') else redirect.from + 'index.html' }}"
+layout: layouts/redirect.njk
+eleventyComputed:
+  redirectTo: "{{ redirect.to }}"
+eleventyExcludeFromCollections: true
+---

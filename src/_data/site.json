@@ -1,0 +1,24 @@
+{
+  "title": "Aldo Sayeg Pasos Trejo",
+  "url": "https://sayeg84.github.io",
+  "description": "Personal academic website of Aldo Sayeg Pasos Trejo, PhD student at FU Berlin.",
+  "author": {
+    "name": "Aldo Sayeg Pasos Trejo",
+    "avatar": "/images/profile_new.png",
+    "bio": "PhD student @ Clementi Group, FU Berlin.",
+    "location": "Berlin, Germany"
+  },
+  "scholar": "https://scholar.google.com/citations?user=kon7kHUAAAAJ&hl=en",
+  "links": [
+    { "name": "Email", "icon": "mail", "url": "mailto:sayeg84@zedat.fu-berlin.de" },
+    { "name": "GitHub", "icon": "github", "url": "https://github.com/sayeg84" },
+    { "name": "Google Scholar", "icon": "scholar", "url": "https://scholar.google.com/citations?user=kon7kHUAAAAJ&hl=en" }
+  ],
+  "nav": [
+    { "title": "Projects", "url": "/projects/" },
+    { "title": "Publications", "url": "/publications/" },
+    { "title": "Teaching", "url": "/teaching/" },
+    { "title": "CV", "url": "/cv/" },
+    { "title": "Blog", "url": "/blog/" }
+  ]
+}

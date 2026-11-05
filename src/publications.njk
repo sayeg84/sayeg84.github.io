@@ -1,0 +1,10 @@
+---
+layout: layouts/page.njk
+title: Publications
+permalink: /publications/
+---
+<p>You can also find my articles on <a href="{{ site.scholar }}">my Google Scholar profile</a>.</p>
+{% set external = true %}{% set showYear = true %}
+<ul class="entries">
+{% for item in collections.publications %}{% include "partials/entry.njk" %}{% endfor %}
+</ul>

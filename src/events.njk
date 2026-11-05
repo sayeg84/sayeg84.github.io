@@ -1,0 +1,14 @@
+---
+layout: layouts/page.njk
+title: Talks and research stays
+permalink: /events/
+---
+{% set showYear = true %}
+<h2>Talks and posters</h2>
+<ul class="entries">
+{% for item in collections.talks %}{% include "partials/entry.njk" %}{% endfor %}
+</ul>
+<h2>Research internships</h2>
+<ul class="entries">
+{% for item in collections.internships %}{% include "partials/entry.njk" %}{% endfor %}
+</ul>

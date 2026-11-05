@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+<article class="page">
+  {% if title %}<h1>{{ title }}</h1>{% endif %}
+  {% if subtitle or venue or location or period %}
+  <p class="meta">
+    {%- if subtitle %}{{ subtitle }}{% endif -%}
+    {%- if venue %}{% if subtitle %} · {% endif %}{{ venue }}{% endif -%}
+    {%- if location %} · {{ location }}{% endif -%}
+    {%- if period %} · {{ period }}{% elif showDate %} · {{ page.date | readableDate }}{% endif -%}
+  </p>
+  {% elif showDate %}
+  <p class="meta">{{ page.date | readableDate }}</p>
+  {% endif %}
+  {{ content | safe }}
+  {% if paperurl %}<p><a class="button" href="{{ paperurl }}">Read the paper</a></p>{% endif %}
+</article>

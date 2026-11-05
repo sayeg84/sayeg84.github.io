@@ -1,0 +1,20 @@
+---
+layout: layouts/page.njk
+title: Blog
+permalink: /blog/
+---
+{% set currentYear = null %}
+{% for item in collections.posts %}
+  {% set y = item.date | year %}
+  {% if y != currentYear %}
+    {% if currentYear %}</ul>{% endif %}
+    <h2>{{ y }}</h2>
+    <ul class="entries">
+    {% set currentYear = y %}
+  {% endif %}
+  <li>
+    <a class="entry-title" href="{{ item.url }}">{{ item.data.title }}</a>
+    <p class="meta">{{ item.date | readableDate }}</p>
+  </li>
+{% endfor %}
+{% if currentYear %}</ul>{% else %}<p>No posts yet.</p>{% endif %}

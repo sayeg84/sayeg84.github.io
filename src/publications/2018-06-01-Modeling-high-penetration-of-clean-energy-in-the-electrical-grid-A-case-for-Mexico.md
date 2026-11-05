@@ -1,0 +1,7 @@
+---
+title: "Modeling high-penetration of clean energy in the electrical grid: A case for Mexico"
+permalink: /publication/2018-06-01-Modeling-high-penetration-of-clean-energy-in-the-electrical-grid-A-case-for-Mexico/
+date: 2018-06-01
+venue: 'In the proceedings of 2018 IEEE 7th World Conference on Photovoltaic Energy Conversion (WCPEC) (A Joint Conference of 45th IEEE PVSC, 28th PVSEC & 34th EU PVSEC)'
+paperurl: 'http://dx.doi.org/10.1109/PVSC.2018.8548261'
+---

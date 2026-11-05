@@ -1,0 +1,8 @@
+---
+layout: layouts/page.njk
+title: Projects
+permalink: /projects/
+---
+<ul class="entries">
+{% for item in collections.projects %}{% include "partials/entry.njk" %}{% endfor %}
+</ul>
