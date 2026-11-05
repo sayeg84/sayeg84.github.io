@@ -1,49 +1,41 @@
 // Animated 3D polygonal chains (master's thesis).
 //
 // Every element with class "chain-plot" and a `data-src` attribute becomes an
-// animation. `data-src` is a path prefix: the script loads `<prefix>_x.csv`,
-// `<prefix>_y.csv` and `<prefix>_z.csv`, where rows are animation frames and
-// columns are the chain's vertices.
+// animation. `data-src` is the URL of a JSON file made by
+// scripts/convert-chain.js: { frames, vertices, range: {x, y, z}, x, y, z },
+// where x/y/z hold one row per animation frame and one column per vertex.
 //
-//   <div class="plot chain-plot" data-src="/assets/simulations/data/needleTrajReduced"></div>
+//   <div class="plot chain-plot" data-src="/assets/simulations/data/needleTraj.json"></div>
 (function () {
   const FRAME_MS = 40;
-  const MAX_FRAMES = 300;
   const LINE = { color: "rgb(0, 179, 184)", width: 7 };
   const MARKER = { color: "rgb(226, 74, 141)", size: 4, symbol: "circle", opacity: 0.9 };
-
-  const parse = (txt) => txt.trim().split(/\r?\n/).map((line) => line.split(",").map(Number));
 
   const load = (url) =>
     fetch(url).then((r) => {
       if (!r.ok) throw new Error(`HTTP ${r.status} loading ${url}`);
-      return r.text();
+      return r.json();
     });
 
-  // [min, max] over every vertex of every frame, padded by 10% on each side.
-  function paddedRange(M) {
-    let min = Infinity, max = -Infinity;
-    for (const row of M) for (const v of row) if (Number.isFinite(v)) { if (v < min) min = v; if (v > max) max = v; }
+  // [min, max] padded by 10% on each side.
+  function padded([min, max]) {
     const pad = (max - min) * 0.1 || 0.5;
     return [min - pad, max + pad];
   }
 
-  function render(el, X, Y, Z) {
+  function render(el, chain) {
+    const { x: X, y: Y, z: Z, range } = chain;
+    if (!Array.isArray(X) || !X.length || !range) throw new Error("not a chain JSON file");
     if (X.length !== Y.length || X.length !== Z.length) throw new Error("X/Y/Z frame counts differ");
 
-    // Keep at most MAX_FRAMES frames so the animation stays smooth.
-    const step = Math.ceil(X.length / MAX_FRAMES);
-    const frames = [];
-    for (let f = 0; f < X.length; f += step) {
-      frames.push({
-        name: String(f),
-        data: [{ type: "scatter3d", mode: "lines+markers", x: X[f], y: Y[f], z: Z[f], line: LINE, marker: MARKER }],
-      });
-    }
+    const frames = X.map((_, f) => ({
+      name: String(f),
+      data: [{ type: "scatter3d", mode: "lines+markers", x: X[f], y: Y[f], z: Z[f], line: LINE, marker: MARKER }],
+    }));
 
-    const axis = (t, M) => ({ title: { text: t }, autorange: false, range: paddedRange(M) });
+    const axis = (t) => ({ title: { text: t }, autorange: false, range: padded(range[t]) });
     const layout = {
-      scene: { aspectmode: "cube", xaxis: axis("x", X), yaxis: axis("y", Y), zaxis: axis("z", Z) },
+      scene: { aspectmode: "cube", xaxis: axis("x"), yaxis: axis("y"), zaxis: axis("z") },
       margin: { l: 0, r: 0, t: 0, b: 0 },
       sliders: [{
         active: 0, x: 0.08, len: 0.9, y: 0.02, xanchor: "left", yanchor: "bottom",
@@ -72,9 +64,8 @@
   }
 
   document.querySelectorAll(".chain-plot[data-src]").forEach((el) => {
-    const src = el.dataset.src;
-    Promise.all(["x", "y", "z"].map((c) => load(`${src}_${c}.csv`)))
-      .then((texts) => render(el, ...texts.map(parse)))
+    load(el.dataset.src)
+      .then((chain) => render(el, chain))
       .catch((err) => {
         el.textContent = "Could not load the animation: " + err.message;
         console.error(err);
