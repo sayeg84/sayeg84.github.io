@@ -6,14 +6,7 @@ scripts:
   - /assets/js/sims/ising.js
 ---
 
-<div class="profile">
-  <img src="{{ site.author.avatar }}" alt="Photo of {{ site.author.name }}">
-  <div>
-    <h1>{{ site.author.name }}</h1>
-    <p>{{ site.author.bio }} {{ site.author.location }}.</p>
-    <div class="links">{% for link in site.links %}<a href="{{ link.url }}">{{ link.name }}</a>{% endfor %}</div>
-  </div>
-</div>
+
 
 <div class="sim" aria-label="Interactive Ising model simulation">
   <canvas id="ising-canvas" width="450" height="450">Canvas not supported; update your browser.</canvas>

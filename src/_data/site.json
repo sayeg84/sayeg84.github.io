@@ -1,5 +1,5 @@
 {
-  "title": "sayeg84.github",
+  "title": "Aldo S. Pasos Trejo",
   "url": "https://sayeg84.github.io",
   "description": "Personal academic website of Aldo Sayeg Pasos Trejo, PhD student at FU Berlin.",
   "author": {
@@ -32,8 +32,8 @@
       "url": "/projects/"
     },
     {
-      "title": "CV",
-      "url": "/cv/"
+      "title": "Bio",
+      "url": "/bio/"
     },
     {
       "title": "Teaching",

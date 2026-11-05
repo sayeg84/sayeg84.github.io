@@ -19,7 +19,7 @@ Pushing to `main` builds and deploys via `.github/workflows/deploy.yml`
 | --- | --- |
 | Name, bio, header menu, footer links | `src/_data/site.json` |
 | Home page | `src/index.md` |
-| CV | `src/cv.md` |
+| Bio | `src/bio.md` |
 | Projects / publications / teaching / talks / internships / blog posts | one Markdown file each in `src/projects/`, `src/publications/`, `src/teaching/`, `src/talks/`, `src/internships/`, `src/posts/` |
 | Old URLs that should redirect | `src/_data/redirects.json` |
 | Colours (light + dark), layout | `src/assets/css/main.css` |
