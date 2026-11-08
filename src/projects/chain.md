@@ -3,7 +3,6 @@ title: "Chain unlocking"
 excerpt: "Global minimization for unlocking geometrical chains"
 permalink: /projects/chain/
 order: 1
-plotly: true
 scripts:
   - /assets/js/sims/chain.js
 ---
