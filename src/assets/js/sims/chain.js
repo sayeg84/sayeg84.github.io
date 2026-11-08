@@ -8,13 +8,15 @@
 //   <div class="plot chain-plot" data-src="/assets/simulations/data/needleTraj.json"></div>
 //
 // The 3D projection is done by hand (rotation + orthographic projection), so no
-// plotting library is needed. Drag the canvas to rotate, double-click to reset.
+// plotting library is needed. The trajectory is re-oriented so the final chain
+// lies left to right (see `reorient`). Drag the canvas to rotate, double-click
+// to reset.
 // Colours come from the CSS variables --sim-chain-line, --sim-chain-vertex and
 // --muted, and are re-read on `themechange`.
 (function () {
   const FRAME_MS = 40;
-  // Same viewpoint as Plotly's default camera: looking from (1, 1, 1).
-  const DEFAULT_VIEW = { yaw: (-3 * Math.PI) / 4, pitch: Math.atan(1 / Math.SQRT2) };
+  // Slightly from the side and above, so the (re-oriented) long axis runs left to right.
+  const DEFAULT_VIEW = { yaw: -0.45, pitch: 0.35 };
   const LINE_WIDTH = 4;
   const VERTEX_RADIUS = 3.5;
   const DRAG_SPEED = 0.01; // radians per pixel
@@ -35,14 +37,82 @@
     return Object.assign(document.createElement(tag), props);
   }
 
+  // Eigen-decomposition of a symmetric 3x3 matrix (Jacobi rotations).
+  // Returns eigenvectors as rows, sorted by decreasing eigenvalue.
+  function eigenSym3(A) {
+    const a = A.map((r) => r.slice());
+    const V = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]; // columns are eigenvectors
+    for (let sweep = 0; sweep < 50; sweep++) {
+      let off = 0;
+      for (let p = 0; p < 2; p++) for (let q = p + 1; q < 3; q++) off += a[p][q] ** 2;
+      if (off < 1e-20) break;
+      for (let p = 0; p < 2; p++) {
+        for (let q = p + 1; q < 3; q++) {
+          if (Math.abs(a[p][q]) < 1e-30) continue;
+          const theta = 0.5 * Math.atan2(2 * a[p][q], a[q][q] - a[p][p]);
+          const c = Math.cos(theta), s = Math.sin(theta);
+          for (let k = 0; k < 3; k++) { // A <- A J
+            const akp = a[k][p], akq = a[k][q];
+            a[k][p] = c * akp - s * akq;
+            a[k][q] = s * akp + c * akq;
+          }
+          for (let k = 0; k < 3; k++) { // A <- J^T A
+            const apk = a[p][k], aqk = a[q][k];
+            a[p][k] = c * apk - s * aqk;
+            a[q][k] = s * apk + c * aqk;
+          }
+          for (let k = 0; k < 3; k++) { // V <- V J
+            const vkp = V[k][p], vkq = V[k][q];
+            V[k][p] = c * vkp - s * vkq;
+            V[k][q] = s * vkp + c * vkq;
+          }
+        }
+      }
+    }
+    return [0, 1, 2]
+      .sort((i, j) => a[j][j] - a[i][i])
+      .map((i) => [V[0][i], V[1][i], V[2][i]]);
+  }
+
+  const cross = (u, v) => [u[1] * v[2] - u[2] * v[1], u[2] * v[0] - u[0] * v[2], u[0] * v[1] - u[1] * v[0]];
+
+  // The problem is rotation invariant, so re-orient the whole trajectory to read
+  // well: the principal axes of the LAST frame (usually the unlocked, stretched
+  // chain) become horizontal (longest), vertical (second) and depth (shortest).
+  // Returns new { X, Y, Z } arrays (x = horizontal, y = depth, z = vertical).
+  function reorient(X, Y, Z) {
+    const f = X.length - 1, m = X[f].length;
+    const mean = [X[f], Y[f], Z[f]].map((r) => r.reduce((s, v) => s + v, 0) / m);
+    const C = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+    for (let i = 0; i < m; i++) {
+      const p = [X[f][i] - mean[0], Y[f][i] - mean[1], Z[f][i] - mean[2]];
+      for (let a = 0; a < 3; a++) for (let b = 0; b < 3; b++) C[a][b] += p[a] * p[b];
+    }
+    const [e1, e2] = eigenSym3(C).map((e) => {
+      // Deterministic sign: largest component positive.
+      const big = e.reduce((best, v) => (Math.abs(v) > Math.abs(best) ? v : best), 0);
+      return big < 0 ? e.map((v) => -v) : e;
+    });
+    const depth = cross(e2, e1); // keeps (horizontal, depth, vertical) right-handed
+    const dot = (e, x, y, z) => e[0] * x + e[1] * y + e[2] * z;
+    const map = (e) => X.map((row, t) => row.map((x, i) => dot(e, x, Y[t][i], Z[t][i])));
+    return { X: map(e1), Y: map(depth), Z: map(e2) };
+  }
+
+  function extent(rows) {
+    let lo = Infinity, hi = -Infinity;
+    for (const r of rows) for (const v of r) { if (v < lo) lo = v; if (v > hi) hi = v; }
+    return [lo, hi];
+  }
+
   function setup(root, chain) {
-    const { x: X, y: Y, z: Z, range } = chain;
-    if (!Array.isArray(X) || !X.length || !range) throw new Error("not a chain JSON file");
-    if (X.length !== Y.length || X.length !== Z.length) throw new Error("X/Y/Z frame counts differ");
+    if (!Array.isArray(chain.x) || !chain.x.length) throw new Error("not a chain JSON file");
+    if (chain.x.length !== chain.y.length || chain.x.length !== chain.z.length) throw new Error("X/Y/Z frame counts differ");
+    const { X, Y, Z } = reorient(chain.x, chain.y, chain.z);
     const n = X.length;
 
     // ----- geometry: map data into a box centred on the origin, equal aspect -----
-    const box = ["x", "y", "z"].map((a) => padded(range[a]));
+    const box = [X, Y, Z].map((rows) => padded(extent(rows)));
     const center = box.map(([lo, hi]) => (lo + hi) / 2);
     const half = Math.max(...box.map(([lo, hi]) => (hi - lo) / 2));
     const corners = [];
@@ -55,6 +125,21 @@
       for (let k = 0; k < 3; k++) if (!(i & (1 << k))) edgesByAxis[k].push([i, i | (1 << k)]);
     }
     const radius = Math.max(...corners.map((c) => Math.hypot(...c)));
+
+    // Rotation + orthographic projection, without translation/scale:
+    // returns [right, up, depth] (larger depth = farther from the viewer).
+    function rotate(v, x, y, z) {
+      const x1 = x * v.cy - y * v.sy;
+      const y1 = x * v.sy + y * v.cy;
+      return [x1, y1 * v.sp + z * v.cp, y1 * v.cp - z * v.sp];
+    }
+    const trig = ({ yaw, pitch }) => ({ cy: Math.cos(yaw), sy: Math.sin(yaw), cp: Math.cos(pitch), sp: Math.sin(pitch) });
+    // Projected half-width / half-height of the box from the default view; sets the zoom.
+    const defaultExtent = (() => {
+      const t = trig(DEFAULT_VIEW);
+      const pr = corners.map((c) => rotate(t, c[0], c[1], c[2]));
+      return [Math.max(...pr.map((p) => Math.abs(p[0]))), Math.max(...pr.map((p) => Math.abs(p[1])))];
+    })();
 
     // ----- DOM -----
     const canvas = el("canvas", { className: "chain-canvas" });
@@ -96,16 +181,14 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      const cy = Math.cos(view.yaw), sy = Math.sin(view.yaw);
-      const cp = Math.cos(view.pitch), sp = Math.sin(view.pitch);
-      const s = (0.5 * Math.min(w, h) * 0.92) / radius;
+      const t = trig(view);
+      // Fit the box as seen from the default view; extreme rotations may clip.
+      const s = 0.46 * Math.min(w / defaultExtent[0], h / defaultExtent[1]);
       const ox = w / 2, oy = h / 2;
-      // Rotate about z (yaw), tilt about the screen's horizontal axis (pitch),
-      // project orthographically. Returns [screenX, screenY, depth]; larger depth = farther.
+      // Returns [screenX, screenY, depth].
       const P = (x, y, z) => {
-        const x1 = x * cy - y * sy;
-        const y1 = x * sy + y * cy;
-        return [ox + x1 * s, oy - (y1 * sp + z * cp) * s, y1 * cp - z * sp];
+        const r = rotate(t, x, y, z);
+        return [ox + r[0] * s, oy - r[1] * s, r[2]];
       };
 
       // Bounding box.
@@ -122,7 +205,7 @@
       }
       ctx.stroke();
 
-      // Axis labels, on the outermost edge parallel to each axis.
+      // Axis labels (of the re-oriented system), on the outermost edge parallel to each axis.
       ctx.globalAlpha = 0.9;
       ctx.fillStyle = colors.muted;
       ctx.font = colors.font;
